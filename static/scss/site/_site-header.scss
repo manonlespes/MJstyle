@@ -1,0 +1,35 @@
+header {
+    height: 250px;
+    border-bottom: 1px solid black;
+    display: flex;
+}
+
+.wrapper {
+    width: 100%;
+
+    .nav-main {
+        height: 30%;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+
+        .header_nav_items {
+            @include unstyle-list;
+
+            .menu-item {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+h1.hdr-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .hdr-logo-link {
+        font-family: $fontTitle;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+    }
+}

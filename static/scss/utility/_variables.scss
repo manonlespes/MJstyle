@@ -1,0 +1,35 @@
+
+// ----
+// ---- Colors
+// ----
+
+$red : #C62A40;
+$black: #1A1718;
+$white: #f1f5f8;
+$grey: #856f76;
+
+$transparent-black: rgba(26,23,24,65%);
+$transparent-red: rgba(198,42,64,70%);
+
+:root{
+    --color-text: $black
+}
+
+
+// ----
+// ---- Fonts
+// ----
+
+@font-face {
+    font-family: "gomarice_sanbon_line";
+    src: url("../../fonts/gomarice_sanbon_line.ttf");
+}
+
+$fontTitle:"gomarice_sanbon_line";
+
+@font-face {
+    font-family: "ABeeZee-Regular";
+    src: url("../../fonts/ABeeZee-Regular.ttf");
+}
+
+$fontText:"ABeeZee-Regular";

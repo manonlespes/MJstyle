@@ -1,0 +1,84 @@
+:root {
+  --color-text: $black ;
+}
+
+@font-face {
+  font-family: "gomarice_sanbon_line";
+  src: url("../../fonts/gomarice_sanbon_line.ttf");
+}
+@font-face {
+  font-family: "ABeeZee-Regular";
+  src: url("../../fonts/ABeeZee-Regular.ttf");
+}
+/* 
+ @mixin unstyle-list {
+     list-style: none;
+ }
+ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f5f8;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 250px;
+  border-bottom: 1px solid black;
+  display: flex;
+}
+
+.wrapper {
+  width: 100%;
+}
+.wrapper .nav-main {
+  height: 30%;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+.wrapper .nav-main .header_nav_items {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.wrapper .nav-main .header_nav_items .menu-item {
+  display: inline-block;
+}
+
+h1.hdr-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1.hdr-logo .hdr-logo-link {
+  font-family: "gomarice_sanbon_line";
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+html {
+  font-family: "gomarice_sanbon_line";
+}
+
+:root {
+  --color-text: $black ;
+}
+
+@font-face {
+  font-family: "gomarice_sanbon_line";
+  src: url("../../fonts/gomarice_sanbon_line.ttf");
+}
+@font-face {
+  font-family: "ABeeZee-Regular";
+  src: url("../../fonts/ABeeZee-Regular.ttf");
+}
+/* 
+ @mixin unstyle-list {
+     list-style: none;
+ }
+ */
+
+/*# sourceMappingURL=main.css.map */
