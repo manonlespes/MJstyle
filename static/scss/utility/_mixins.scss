@@ -24,3 +24,16 @@
      list-style: none;
  }
  */
+
+
+@mixin unstyle-link{
+    text-decoration: none;
+}
+
+ @mixin facebook {
+     content: '\f09a'; 
+ }
+
+ @mixin youtube {
+    content: '\f167'; 
+}

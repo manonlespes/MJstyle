@@ -79,7 +79,7 @@ class StarterSite extends Timber\Site {
 	}
 
 	public function enqueue_styles_and_scripts() {
-		var_dump(get_stylesheet_directory_uri().'/static/dist/main.css');
+		/* var_dump(get_stylesheet_directory_uri().'/static/dist/main.css'); */
 		wp_enqueue_style('project', get_stylesheet_directory_uri().'/static/dist/main.css');
 	}
 	
@@ -148,7 +148,45 @@ class StarterSite extends Timber\Site {
 			)
 		);
 
+		register_nav_menus([
+			"primary" => "Menu principal YOLO",
+			"footer" => "Menu du pied de page",
+			"social" => "Menu liens icons"
+		]);
+	
+
 		add_theme_support( 'menus' );
+
+
+		/* change the color of the text in the header and addition of an image in the header*/
+		$defaults = array(
+			'default-image'          => false,
+			'random-default'         => false,
+			'width'                  => 0,
+			'height'                 => 0,
+			'flex-height'            => false,
+			'flex-width'             => false,
+			'default-text-color'     => '',
+			'header-text'            => true,
+			'uploads'                => false,
+			'wp-head-callback'       => '',
+			'admin-head-callback'    => '',
+			'admin-preview-callback' => '',
+			'video'                  => false,
+			'video-active-callback'  => 'is_front_page',
+		);
+		add_theme_support( 'custom-header', $defaults ); 
+
+		add_theme_support( 'custom-logo', array(
+			'height'               => 350,
+			'width'                => 800,
+			'flex-height'          => true,
+			'flex-width'           => true,
+			'header-text'          => array( 'site-title', 'site-description' ),
+			'unlink-homepage-logo' => true,
+		) );
+
+		
 	}
 
 	/** This Would return 'foo bar!'.
@@ -160,13 +198,32 @@ class StarterSite extends Timber\Site {
 		return $text;
 	}
 
+	public function social_menu(){
+		if ( has_nav_menu( 'social' ) ) {
+			wp_nav_menu(
+				array(
+					'theme_location'  => 'social',
+					'container'       => 'div',
+					'container_id'    => 'menu-social',
+					'container_class' => 'menu-social',
+					'menu_id'         => 'menu-social-items',
+					'menu_class'      => 'menu-items',
+					'depth'           => 1,
+					'link_before'     => '<span class="screen-reader-text">',
+					'link_after'      => '</span>',
+					'fallback_cb'     => '',
+				)
+			);
+		}
+	}
+
 	/** This is where you can add your own functions to twig.
 	 *
 	 * @param string $twig get extension.
 	 */
 	public function add_to_twig( $twig ) {
 		$twig->addExtension( new Twig\Extension\StringLoaderExtension() );
-		$twig->addFilter( new Twig\TwigFilter( 'myfoo', array( $this, 'myfoo' ) ) );
+		$twig->addFilter( new Twig\TwigFilter( 'social_menu', array( $this, 'social_menu' ) ) );
 		return $twig;
 	}
 

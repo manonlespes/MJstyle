@@ -1,0 +1,16 @@
+
+{{social}}
+{{dump(social)}}
+<div id="menu-social" class="menu-social">
+	<ul>
+
+		{% for item in items %}
+		<li>
+			<a target="{{item.target}}"  href="{{item.link}}">{{item.content}}</a>
+		</li>
+	</ul>
+	{# comment faire apparaître mes icons ici et comment faire en sorte que dans ce menu, on peut rajouter une icon à choisir... #}
+
+{% endfor %}
+
+</div>

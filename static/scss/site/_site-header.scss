@@ -1,5 +1,5 @@
 header {
-    height: 250px;
+    height: 500px;
     border-bottom: 1px solid black;
     display: flex;
 }
@@ -20,9 +20,21 @@ header {
             }
         }
     }
+
+    .logo_title {
+        height: 40%;
+        border: 1px solid red;
+
+        img {
+            width: 50%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+        }
+    }
 }
 
-h1.hdr-logo {
+/* h1.hdr-logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,4 +44,40 @@ h1.hdr-logo {
         font-size: 2.5rem;
         text-transform: uppercase;
     }
+}
+ */
+
+ /* TODO refaire le style ici */
+.menu-social {
+    float: left;
+    width: 40%;
+    position: absolute;
+    right: 1.5rem;
+    bottom: 4.5rem;
+}
+#menu-social-items {
+    margin-bottom: 0;
+}
+.menu-social ul {
+    text-align: right;
+    list-style: none;
+}
+.menu-social ul li {
+    position: relative;
+    display: inline-block;
+}
+.menu-social li a:before {
+    @include facebook;
+    display: inline-block;
+    vertical-align: bottom;
+    padding: 0.5rem 0.5rem;
+    font-family: "Fontawesome";
+    font-size: 1.6rem;
+    -webkit-font-smoothing: antialiased;
+}
+.menu-social li a {
+    color: #c7c7c7;
+}
+.menu-social li:hover > a {
+    color: #fff;
 }
