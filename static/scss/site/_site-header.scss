@@ -2,37 +2,46 @@ header {
     height: 500px;
     border-bottom: 1px solid black;
     display: flex;
-}
+    background: linear-gradient(to bottom, $black, $grey, $white);
+   
 
-.wrapper {
-    width: 100%;
+    .wrapper {
+        width: 100%;
+    
+        .nav-main {
+            height: 30%;
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+    
+            .header_nav_items {
+                @include unstyle-list;
+    
+                .menu-item {
+                    display: inline-block;
 
-    .nav-main {
-        height: 30%;
-        border-bottom: 1px solid black;
-        border-top: 1px solid black;
-
-        .header_nav_items {
-            @include unstyle-list;
-
-            .menu-item {
-                display: inline-block;
+                    a{
+                        padding: 10px;
+                        display: block;
+                        font-family: $fontTitle;
+                    }
+                }
+            }
+        }
+    
+        .logo_title {
+            height: 40%;
+            border: 1px solid red;
+    
+            img {
+                width: 50%;
+                height: 100%;
+                margin: auto;
+                display: flex;
             }
         }
     }
-
-    .logo_title {
-        height: 40%;
-        border: 1px solid red;
-
-        img {
-            width: 50%;
-            height: 100%;
-            margin: auto;
-            display: flex;
-        }
-    }
 }
+
 
 /* h1.hdr-logo {
     display: flex;
@@ -67,7 +76,7 @@ header {
     display: inline-block;
 }
 .menu-social li a:before {
-    @include facebook;
+/*     @include facebook; */
     display: inline-block;
     vertical-align: bottom;
     padding: 0.5rem 0.5rem;

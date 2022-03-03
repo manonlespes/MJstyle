@@ -3,17 +3,20 @@
 }
 
 @font-face {
-  font-family: "gomarice_sanbon_line";
-  src: url("../../fonts/gomarice_sanbon_line.ttf");
+  src: url("http://fonts.cdnfonts.com/css/prisma");
+  font-family: "Prisma", sans-serif;
 }
 @font-face {
-  font-family: "ABeeZee-Regular";
-  src: url("../../fonts/ABeeZee-Regular.ttf");
+  src: url("https://fonts.googleapis.com/css2?family=ABeeZee&display=swap");
+  font-family: "ABeeZee", sans-serif;
 }
-/* 
- @mixin unstyle-list {
-     list-style: none;
- }
+/* @mixin facebook {
+    content: "\f09a";
+}
+
+@mixin youtube {
+    content: "\f167";
+}
  */
 * {
   box-sizing: border-box;
@@ -25,33 +28,58 @@ body {
   padding: 0;
 }
 
+a {
+  color: #1A1718;
+  text-decoration: none;
+  /* visited link */
+  /* mouse over link */
+  /* selected link */
+}
+a:link {
+  color: #1A1718;
+}
+a:visited {
+  color: #856f76;
+}
+a:hover {
+  color: #C62A40;
+}
+a:active {
+  color: #856f76;
+}
+
 header {
   height: 500px;
   border-bottom: 1px solid black;
   display: flex;
+  background: linear-gradient(to bottom, #1A1718, #856f76, #f1f5f8);
 }
-
-.wrapper {
+header .wrapper {
   width: 100%;
 }
-.wrapper .nav-main {
+header .wrapper .nav-main {
   height: 30%;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
 }
-.wrapper .nav-main .header_nav_items {
+header .wrapper .nav-main .header_nav_items {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-.wrapper .nav-main .header_nav_items .menu-item {
+header .wrapper .nav-main .header_nav_items .menu-item {
   display: inline-block;
 }
-.wrapper .logo_title {
+header .wrapper .nav-main .header_nav_items .menu-item a {
+  padding: 10px;
+  display: block;
+  font-family: "Prisma";
+}
+header .wrapper .logo_title {
   height: 40%;
   border: 1px solid red;
 }
-.wrapper .logo_title img {
+header .wrapper .logo_title img {
   width: 50%;
   height: 100%;
   margin: auto;
@@ -94,7 +122,7 @@ header {
 }
 
 .menu-social li a:before {
-  content: "\f09a";
+  /*     @include facebook; */
   display: inline-block;
   vertical-align: bottom;
   padding: 0.5rem 0.5rem;
@@ -111,8 +139,55 @@ header {
   color: #fff;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+}
+footer__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid black;
+  height: 200px;
+}
+footer__contact h3 {
+  align-self: center;
+}
+footer__contact .content {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  height: 100%;
+}
+footer__contact .content .information {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}
+footer__copyright {
+  background-color: #1A1718;
+}
+
 html {
-  font-family: "gomarice_sanbon_line";
+  font-family: "ABeeZee";
+}
+
+h1 {
+  font-family: "Prisma";
+  font-size: 45px;
+}
+
+h2 {
+  font-family: "Prisma";
+  font-size: 30px;
+  line-height: 30px;
 }
 
 :root {
@@ -120,17 +195,20 @@ html {
 }
 
 @font-face {
-  font-family: "gomarice_sanbon_line";
-  src: url("../../fonts/gomarice_sanbon_line.ttf");
+  src: url("http://fonts.cdnfonts.com/css/prisma");
+  font-family: "Prisma", sans-serif;
 }
 @font-face {
-  font-family: "ABeeZee-Regular";
-  src: url("../../fonts/ABeeZee-Regular.ttf");
+  src: url("https://fonts.googleapis.com/css2?family=ABeeZee&display=swap");
+  font-family: "ABeeZee", sans-serif;
 }
-/* 
- @mixin unstyle-list {
-     list-style: none;
- }
+/* @mixin facebook {
+    content: "\f09a";
+}
+
+@mixin youtube {
+    content: "\f167";
+}
  */
 /* importaion of the folder scss with all font-awesone icons */
 /*!

@@ -1,15 +1,12 @@
-
-
-
-
-
 // ----
-// List
+// headings
 // ----
 
+// ----
+// List and Link
+// ----
 
-
-@mixin unstyle-list($margin:true, $pad:true) {
+@mixin unstyle-list($margin: true, $pad: true) {
     @if $margin != false {
         margin: 0;
     }
@@ -19,21 +16,35 @@
     list-style-type: none;
 }
 
-/* 
- @mixin unstyle-list {
-     list-style: none;
- }
- */
-
-
-@mixin unstyle-link{
-    text-decoration: none;
+/* @mixin facebook {
+    content: "\f09a";
 }
 
- @mixin facebook {
-     content: '\f09a'; 
- }
+@mixin youtube {
+    content: "\f167";
+}
+ */
 
- @mixin youtube {
-    content: '\f167'; 
+@mixin links {
+    color: $black;
+    text-decoration: none;
+
+    &:link {
+        color: $black;
+    }
+
+    /* visited link */
+    &:visited {
+        color: $grey;
+    }
+
+    /* mouse over link */
+    &:hover {
+        color: $red;
+    }
+
+    /* selected link */
+    &:active {
+        color: $grey;
+    }
 }

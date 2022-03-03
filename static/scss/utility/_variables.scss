@@ -21,15 +21,15 @@ $transparent-red: rgba(198,42,64,70%);
 // ----
 
 @font-face {
-    font-family: "gomarice_sanbon_line";
-    src: url("../../fonts/gomarice_sanbon_line.ttf");
+   src: url('http://fonts.cdnfonts.com/css/prisma');
+   font-family: 'Prisma', sans-serif;
 }
 
-$fontTitle:"gomarice_sanbon_line";
+$fontTitle: 'Prisma';
 
 @font-face {
-    font-family: "ABeeZee-Regular";
-    src: url("../../fonts/ABeeZee-Regular.ttf");
+    src: url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+    font-family:'ABeeZee', sans-serif;;
 }
 
-$fontText:"ABeeZee-Regular";
+$fontText:"ABeeZee";
