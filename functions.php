@@ -67,6 +67,7 @@ class StarterSite extends Timber\Site {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_action('wp_enqueue_scripts', array($this, 'enqueue_styles_and_scripts'));
+		add_action('after_setup_theme', array($this, 'register_block_styles')); /* avoid too many classes and to overload the style with classes */
 		parent::__construct();
 	}
 	/** This is where you can register custom post types. */
@@ -80,8 +81,24 @@ class StarterSite extends Timber\Site {
 
 	public function enqueue_styles_and_scripts() {
 		/* var_dump(get_stylesheet_directory_uri().'/static/dist/main.css'); */
+		wp_dequeue_style('wp-block-library'); /* delete the defaut style of Gutenberg plugin */
 		wp_enqueue_style('project', get_stylesheet_directory_uri().'/static/dist/main.css');
 	}
+
+	/* addition of custom style in Gutenberg blocks/components */
+	public function register_block_styles (){
+		register_block_style('core/button', [
+			'name'=> 'as-link-button',
+			'label'=> __('MJ Bouton')
+		]); 
+		register_block_style('core/quote', [
+			'name'=>'quote-of-the-day',
+			'label'=>__('MJ citation'), 
+			'is_default' => true
+		]);
+
+	}
+
 	
 
 	/** This is where you add some context
@@ -89,11 +106,13 @@ class StarterSite extends Timber\Site {
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		$context['foo']   = 'bar';
+		/* $context['foo']   = 'bar'; */
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::context();';
 		$context['menu']  = new Timber\Menu();/* rajouter ici éventuellement le slug de mon menu */
 		$context['site']  = $this;
+		$custom_logo_url = wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ), 'full' );
+		$context['custom_logo_url'] = $custom_logo_url;   
 		return $context;
 	}
 
@@ -178,7 +197,7 @@ class StarterSite extends Timber\Site {
 		add_theme_support( 'custom-header', $defaults ); 
 
 		add_theme_support( 'custom-logo', array(
-			'height'               => 350,
+			'height'               => 800,
 			'width'                => 800,
 			'flex-height'          => true,
 			'flex-width'           => true,
@@ -193,10 +212,10 @@ class StarterSite extends Timber\Site {
 	 *
 	 * @param string $text being 'foo', then returned 'foo bar!'.
 	 */
-	public function myfoo( $text ) {
+	/* public function myfoo( $text ) {
 		$text .= ' bar!';
 		return $text;
-	}
+	} */
 
 	public function social_menu(){
 		if ( has_nav_menu( 'social' ) ) {

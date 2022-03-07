@@ -2,6 +2,39 @@
 // headings
 // ----
 
+@mixin hn(){
+    font-family: $fontTitle;
+ /*    font-weight: 600; */
+    font-style: normal;
+}
+
+@mixin h1(){
+    @include hn();
+    font-size: 1.8rem;
+    line-height: $spacer * 3;
+}
+
+@mixin h2(){
+    @include hn();
+    font-size: 1.5rem;
+    line-height: $spacer * 3;
+}
+
+@mixin h3(){
+    @include hn();
+    font-size: 1.2rem;
+    line-height: $spacer * 2;
+}
+
+// ----
+// transitions
+// ----
+
+@mixin transition{
+    transition: all 0.3s ease-in-out;
+}
+
+
 // ----
 // List and Link
 // ----

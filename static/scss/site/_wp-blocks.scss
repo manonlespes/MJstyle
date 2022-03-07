@@ -1,0 +1,13 @@
+.wp-block-colums {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint ($medium){
+        flex-direction: row;
+
+    }
+}
+
+.wp-block-column {
+    flex: 1;
+}

@@ -1,12 +1,11 @@
 h1{
-    font-family: $fontTitle;
-    font-size: 45px;
- 
+  @include h1();
 }
 
 h2{
-    font-family: $fontTitle;
-    font-size: 30px;
-    line-height: 30px;
- 
+ @include h2();
+}
+
+h3{
+    @include h3();
 }
