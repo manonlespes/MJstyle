@@ -29,17 +29,19 @@ body {
 }
 
 a {
+  transition: all 0.3s ease-in-out;
   color: #1A1718;
   text-decoration: none;
   /* visited link */
   /* mouse over link */
+  /* selected link */
   /* selected link */
 }
 a:link {
   color: #1A1718;
 }
 a:visited {
-  color: #856f76;
+  color: #1A1718;
 }
 a:hover {
   color: #C62A40;
@@ -47,44 +49,70 @@ a:hover {
 a:active {
   color: #856f76;
 }
+a:focus {
+  color: #856f76;
+}
 
 header {
-  height: 500px;
+  height: 350px;
   border-bottom: 1px solid black;
   display: flex;
-  background: linear-gradient(to bottom, #1A1718, #856f76, #f1f5f8);
+  flex-direction: column;
+  /*  background: linear-gradient(to bottom, $black, $grey, $white); */
+}
+@media screen and (min-width: 768px) {
+  header {
+    height: 500px;
+  }
 }
 header .wrapper {
-  width: 100vw;
+  /*     width: 100vw; */
   height: 100%;
 }
 header .wrapper .nav-main {
-  height: 30%;
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
+  height: 10%;
+  display: none;
 }
-header .wrapper .nav-main .header_nav_items {
+@media screen and (min-width: 768px) {
+  header .wrapper .nav-main {
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+header .wrapper .nav-main .menu {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-header .wrapper .nav-main .header_nav_items .menu-item {
+header .wrapper .nav-main .menu .menu-item {
   display: inline-block;
 }
-header .wrapper .nav-main .header_nav_items .menu-item a {
+header .wrapper .nav-main .menu .menu-item a {
   padding: 10px;
   display: block;
   font-family: "Prisma";
 }
+@media screen and (min-width: 768px) {
+  header .wrapper .nav-main .menu .menu-item a {
+    font-size: 1.2em;
+  }
+}
 header .wrapper .logo_title {
-  height: 70%;
+  height: 60%;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 }
+@media screen and (min-width: 768px) {
+  header .wrapper .logo_title {
+    height: 75%;
+    margin-top: 20px;
+  }
+}
 header .wrapper .logo_title a {
-  height: 80%;
+  height: 70%;
 }
 header .wrapper .logo_title a img {
   object-fit: contain;
@@ -100,59 +128,40 @@ header .wrapper .logo_title h1 {
   line-height: 30px;
   padding: 0;
   margin: 0;
+  margin-top: 25px;
+  height: 30%;
+  display: flex;
+  align-items: center;
 }
-
-/* h1.hdr-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .hdr-logo-link {
-        font-family: $fontTitle;
-        font-size: 2.5rem;
-        text-transform: uppercase;
-    }
+@media screen and (min-width: 768px) {
+  header .wrapper .logo_title h1 {
+    margin-top: 0;
+  }
 }
- */
-/* TODO refaire le style ici */
-.menu-social {
-  float: left;
-  width: 40%;
-  position: absolute;
-  right: 1.5rem;
-  bottom: 4.5rem;
+header .wrapper .nav-social {
+  height: 15%;
+  display: flex;
 }
-
-#menu-social-items {
-  margin-bottom: 0;
-}
-
-.menu-social ul {
-  text-align: right;
-  list-style: none;
-}
-
-.menu-social ul li {
+header .wrapper .nav-social > .menu-social {
   position: relative;
-  display: inline-block;
 }
-
-.menu-social li a:before {
-  /*     @include facebook; */
-  display: inline-block;
-  vertical-align: bottom;
-  padding: 0.5rem 0.5rem;
-  font-family: "Fontawesome";
-  font-size: 1.6rem;
-  -webkit-font-smoothing: antialiased;
+header .wrapper .btn-menu-responsive {
+  font-family: "Prisma";
+  /*    font-weight: 600; */
+  font-style: normal;
+  font-size: 1.8rem;
+  line-height: 30px;
+  height: 15%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 90%;
+  cursor: pointer;
 }
-
-.menu-social li a {
-  color: #c7c7c7;
-}
-
-.menu-social li:hover > a {
-  color: #fff;
+@media screen and (min-width: 768px) {
+  header .wrapper .btn-menu-responsive {
+    display: none;
+  }
 }
 
 footer {

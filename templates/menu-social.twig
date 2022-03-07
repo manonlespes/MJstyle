@@ -1,10 +1,7 @@
 
-{# {{social}} #}
-{# {{dump(social)}} #}
 <div id="menu-social" class="menu-social">
 	<ul>
-
-		{% for item in items %}
+		{% for item in social_menu.items %}
 		<li>
 			<a target="{{item.target}}"  href="{{item.link}}">{{item.content}}</a>
 		</li>

@@ -1,9 +1,11 @@
-{% if menu %}
+{{ function('wp_nav_menu') }}
 
+{# {% if menu %}
+ #}
 {# {{dump(menu)}} #}
 
-	<ul class="menu header_nav_items">
-	{% for item in items %}
+	{# <ul class="menu">
+	{% for item in primary_menu.items %}
 
 		<li class="{{ item.classes | join(' ') }}">
 			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
@@ -13,6 +15,5 @@
 	{% endfor %}
 	</ul>
 
-{% endif %}
+{% endif %} #}
 
-{# TODO ajouter le menu-social #}

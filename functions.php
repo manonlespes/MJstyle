@@ -97,6 +97,12 @@ class StarterSite extends Timber\Site {
 			'is_default' => true
 		]);
 
+		register_block_style('core/separator', [
+			'name'=>'personnalised-separator',
+			'label'=>__('MJ séparateur'), 
+			'is_default' => true
+		]);
+
 	}
 
 	
@@ -109,10 +115,12 @@ class StarterSite extends Timber\Site {
 		/* $context['foo']   = 'bar'; */
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::context();';
-		$context['menu']  = new Timber\Menu();/* rajouter ici éventuellement le slug de mon menu */
+		$context['menu']  = new Timber\Menu('Primary Menu');/* rajouter ici éventuellement le slug de mon menu */
 		$context['site']  = $this;
 		$custom_logo_url = wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ), 'full' );
 		$context['custom_logo_url'] = $custom_logo_url;   
+		$context['footer_menu'] = new Timber\Menu('Footer Menu');
+		$context['social_menu'] = new Timber\Menu('Social Menu');
 		return $context;
 	}
 
@@ -168,9 +176,9 @@ class StarterSite extends Timber\Site {
 		);
 
 		register_nav_menus([
-			"primary" => "Menu principal YOLO",
-			"footer" => "Menu du pied de page",
-			"social" => "Menu liens icons"
+			"primary_menu" => "Menu principal YOLO",
+			"footer_menu" => "Menu du pied de page",
+			"social_menu" => "Menu liens icons"
 		]);
 	
 

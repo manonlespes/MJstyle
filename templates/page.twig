@@ -4,14 +4,15 @@
 	<div class="content-wrapper">
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
+				<h2 class="article-h2">{{post.title}}</h2>
 				<div class="article-body">
 					{{post.content}}
 				</div>
 				<div>
-					<img src="{{ post.thumbnail.src }}" />
+					<img src="{{ post.thumbnail.src }}"/>
 				</div>
 			</section>
 		</article>
-	</div><!-- /content-wrapper -->
+	</div>
+	<!-- /content-wrapper -->
 {% endblock %}

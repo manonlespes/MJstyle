@@ -7,14 +7,14 @@
 
 <header class="header">
 	{% block header %}
-		<div
-			class="wrapper">
-			{# <nav id="nav-social" class="nav-social">
-							{% include "menu-social.twig" %}
-						</nav> #}
+		<div class="wrapper">
+			<nav id="nav-social" class="nav-social">
+				{% include "menu-social.twig" %}
+			</nav>
 			<nav id="nav-main" class="nav-main" role="navigation">
 				{% include "menu.twig" with {'items': menu.get_items} %}
 			</nav>
+			<div class="btn-menu-responsive">menu</div>
 			<!-- #nav -->
 			<div class="logo_title">
 				<a href="{{site.url}}" rel="home"> <img src="{{custom_logo_url}}" alt="{{custom_logo.alt}}"></a> {# todo faire que le alt apparaisse #}
@@ -26,7 +26,7 @@
 
 <section id="content" role="main" class="content-wrapper">
 	{% if title %}
-		<h1>{{title}}</h1>
+		<h2>{{title}}</h2>
 	{% endif %}
 	<div class="wrapper {{sidebar_class}}">
 		{% block content %}

@@ -1,44 +1,61 @@
 header {
-    height: 500px;
+    height: 350px;
     border-bottom: 1px solid black;
     display: flex;
-    background: linear-gradient(to bottom, $black, $grey, $white);
-    
-   
+    flex-direction: column;
+    /*  background: linear-gradient(to bottom, $black, $grey, $white); */
+
+    @include breakpoint($medium) {
+        height: 500px;
+    }
 
     .wrapper {
-        width: 100vw;
+        /*     width: 100vw; */
         height: 100%;
-    
+
         .nav-main {
-            height: 30%;
-            border-bottom: 1px solid black;
-            border-top: 1px solid black;
-    
-            .header_nav_items {
+            height: 10%;
+            display: none;
+
+            @include breakpoint($medium) {
+                visibility: visible;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .menu {
                 @include unstyle-list;
-    
+
                 .menu-item {
                     display: inline-block;
 
-                    a{
+                    a {
                         padding: 10px;
                         display: block;
                         font-family: $fontTitle;
+
+                        @include breakpoint($medium) {
+                            font-size: 1.2em;
+                        }
                     }
                 }
             }
         }
-    
+
         .logo_title {
-            height: 70%;
+            height: 60%;
             display: flex;
-            justify-content: space-evenly;
             align-items: center;
             flex-direction: column;
 
-            a{
-                height: 80%;
+            @include breakpoint($medium) {
+               height: 75%;
+               margin-top: $spacer*2;
+            }
+
+            a {
+                height: 70%;
 
                 img {
                     object-fit: contain;
@@ -48,63 +65,42 @@ header {
                 }
             }
 
-            h1{
+            h1 {
                 @include h1();
                 padding: 0;
                 margin: 0;
+                margin-top: 25px;
+                height: 30%;
+                display: flex;
+                align-items: center;
 
+                @include breakpoint($medium) {
+                    margin-top: 0;
+                 }
             }
+        }
 
-    
+        .nav-social {
+            height: 15%;
+            display: flex;
+
+            & > .menu-social {
+                position: relative;
+            }
+        }
+
+        .btn-menu-responsive {
+            @include h1();
+            height: 15%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 90%;
+            cursor: pointer;
+
+            @include breakpoint($medium) {
+                display: none;
+            }
         }
     }
-}
-
-
-/* h1.hdr-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .hdr-logo-link {
-        font-family: $fontTitle;
-        font-size: 2.5rem;
-        text-transform: uppercase;
-    }
-}
- */
-
- /* TODO refaire le style ici */
-.menu-social {
-    float: left;
-    width: 40%;
-    position: absolute;
-    right: 1.5rem;
-    bottom: 4.5rem;
-}
-#menu-social-items {
-    margin-bottom: 0;
-}
-.menu-social ul {
-    text-align: right;
-    list-style: none;
-}
-.menu-social ul li {
-    position: relative;
-    display: inline-block;
-}
-.menu-social li a:before {
-/*     @include facebook; */
-    display: inline-block;
-    vertical-align: bottom;
-    padding: 0.5rem 0.5rem;
-    font-family: "Fontawesome";
-    font-size: 1.6rem;
-    -webkit-font-smoothing: antialiased;
-}
-.menu-social li a {
-    color: #c7c7c7;
-}
-.menu-social li:hover > a {
-    color: #fff;
 }
