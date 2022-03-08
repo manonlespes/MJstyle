@@ -33,15 +33,15 @@
 			Sorry, no content
 		{% endblock %}
 	</div>
-	{% if sidebar %}
+	{# {% if sidebar %}
 		<aside class="layout-sidebar">
 			{{sidebar}}
 		</aside>
-	{% endif %}
+	{% endif %} #}
 </section>
 
 {% block footer %}
-	<footer id="footer">
+	<footer id="footer" class="footer">
 		{% include 'footer.twig' %}
 	</footer>
 	{{ function('wp_footer') }}

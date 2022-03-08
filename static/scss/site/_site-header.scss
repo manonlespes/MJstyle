@@ -20,12 +20,22 @@ header {
             @include breakpoint($medium) {
                 visibility: visible;
                 display: flex;
-                justify-content: center;
                 align-items: center;
             }
 
+            .menu-primary-menu-container{
+                @include breakpoint($medium){
+                    width: 80%;
+                    margin: auto;
+                }
+            }
             .menu {
                 @include unstyle-list;
+
+                @include breakpoint($medium){
+                    display: flex;
+                    justify-content: space-evenly;
+                }
 
                 .menu-item {
                     display: inline-block;
@@ -37,6 +47,10 @@ header {
 
                         @include breakpoint($medium) {
                             font-size: 1.2em;
+                        }
+
+                        @include breakpoint($large) {
+                            font-size: 1.6em;
                         }
                     }
                 }
@@ -83,9 +97,25 @@ header {
         .nav-social {
             height: 15%;
             display: flex;
+            align-items: center;
 
             & > .menu-social {
-                position: relative;
+                width: 100%;
+
+                ul{
+                    @include unstyle-list();
+                    display: flex;
+                    justify-content: space-evenly;
+
+
+                   & > li a[href*="facebook.com"]::before{
+                        content: "\f09a";
+                    }
+
+                    & > li a {
+                        color: $red;
+                    }
+                }
             }
         }
 

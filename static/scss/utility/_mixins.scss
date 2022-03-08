@@ -1,4 +1,16 @@
 // ----
+// Grids
+// ----
+
+@mixin grid (){
+    display: grid;
+    grid-template-columns: 100fr repeat(12, 16fr ) 100fr; /* out of 28 grids in total */
+    grid-gap: 18px;
+    
+}
+
+
+// ----
 // headings
 // ----
 

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --color-text: $black ;
 }
@@ -77,14 +78,25 @@ header .wrapper .nav-main {
   header .wrapper .nav-main {
     visibility: visible;
     display: flex;
-    justify-content: center;
     align-items: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  header .wrapper .nav-main .menu-primary-menu-container {
+    width: 80%;
+    margin: auto;
   }
 }
 header .wrapper .nav-main .menu {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+@media screen and (min-width: 768px) {
+  header .wrapper .nav-main .menu {
+    display: flex;
+    justify-content: space-evenly;
+  }
 }
 header .wrapper .nav-main .menu .menu-item {
   display: inline-block;
@@ -97,6 +109,11 @@ header .wrapper .nav-main .menu .menu-item a {
 @media screen and (min-width: 768px) {
   header .wrapper .nav-main .menu .menu-item a {
     font-size: 1.2em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header .wrapper .nav-main .menu .menu-item a {
+    font-size: 1.6em;
   }
 }
 header .wrapper .logo_title {
@@ -141,9 +158,23 @@ header .wrapper .logo_title h1 {
 header .wrapper .nav-social {
   height: 15%;
   display: flex;
+  align-items: center;
 }
 header .wrapper .nav-social > .menu-social {
-  position: relative;
+  width: 100%;
+}
+header .wrapper .nav-social > .menu-social ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+header .wrapper .nav-social > .menu-social ul > li a[href*="facebook.com"]::before {
+  content: "\f09a";
+}
+header .wrapper .nav-social > .menu-social ul > li a {
+  color: #C62A40;
 }
 header .wrapper .btn-menu-responsive {
   font-family: "Prisma";
@@ -164,40 +195,91 @@ header .wrapper .btn-menu-responsive {
   }
 }
 
-footer {
+.footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: fit-content;
+  height: 600px;
+  border: 1px solid black;
 }
-footer__contact {
+.footer .test__contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  border: 1px solid black;
-  height: 200px;
+  height: 50%;
+  margin: auto;
 }
-footer__contact h3 {
-  align-self: center;
-}
-footer__contact .content {
-  display: flex;
+.footer .test__contact-content {
   width: 100%;
-  justify-content: space-around;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: auto;
 }
-footer__contact .content .information {
+.footer .test__contact-content div {
+  margin: auto;
+}
+.footer .test__contact-content .information {
   flex-direction: column;
   display: flex;
   justify-content: space-around;
   align-content: center;
   align-items: center;
 }
-footer__copyright {
+.footer .test__nav {
+  height: 50%;
+}
+.footer .test__nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: left;
+  line-height: 25px;
+}
+.footer .test__nav ul li::before {
+  content: "→  ";
+  color: #C62A40;
+  font-weight: bolder;
+  width: 2em;
+  margin-left: 1em;
+}
+.footer__copyright {
   background-color: #1A1718;
+  height: 33.33333%;
+  width: 100%;
+  color: #f1f5f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: auto;
+}
+.footer__copyright-links {
+  display: flex;
+  margin: auto;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.footer__copyright .mention_design {
+  font-size: 0.8em;
+}
+@media screen and (min-width: 768px) {
+  .footer__copyright .mention_design {
+    font-size: inherit;
+  }
+}
+.footer__copyright a {
+  color: #C62A40;
+}
+.footer__copyright a:hover {
+  color: #856f76;
+}
+.footer h3 {
+  text-align: center;
 }
 
 html {
@@ -254,6 +336,11 @@ h3 {
 .is-style-as-link-button:hover .wp-block-button__link {
   color: #1A1718;
   cursor: pointer;
+}
+
+.is-style-personnalised-separator {
+  height: 25px;
+  background-color: #1A1718;
 }
 
 :root {

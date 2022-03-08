@@ -1,40 +1,98 @@
-footer {
+.footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: fit-content;
+    height: 600px;
+    border: 1px solid black;
 
-    &__contact {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        border: 1px solid black;
-        height: 200px;
+    .test {
+        &__contact {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            margin: auto;
 
-        h3 {
-            align-self: center;
+            &-content {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                margin: auto;
+
+                div {
+                    margin: auto;
+                }
+
+                .information {
+                    flex-direction: column;
+                    display: flex;
+                    justify-content: space-around;
+                    align-content: center;
+                    align-items: center;
+                }
+            }
         }
 
-        .content {
-            display: flex;
-            width: 100%;
-            justify-content: space-around;
-            height: 100%;
+        &__nav {
+            height: 50%;
 
-            .information {
-                flex-direction: column;
-                display: flex;
-                justify-content: space-around;
-                align-content: center;
-                align-items: center;
+            ul {
+                @include unstyle-list();
+                text-align: left;
+                line-height: $spacer * 2.5;
+
+                li::before {
+                    content: "→  ";
+                    color: $red;
+                    font-weight: bolder;
+                    width: 2em;
+                    margin-left: 1em;
+                }
             }
         }
     }
 
-    &__copyright{
+    &__copyright {
         background-color: $black;
+        height: 33.33333%;
+        width: 100%;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: center;
+        margin: auto;
+
+        &-links {
+            display: flex;
+            margin: auto;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+
+        .mention_design {
+            font-size: 0.8em;
+
+            @include breakpoint($medium) {
+                font-size: inherit;
+            }
+        }
+
+        a {
+            color: $red;
+
+            &:hover {
+                color: $grey;
+            }
+        }
+    }
+
+    h3 {
+        text-align: center;
     }
 }

@@ -83,6 +83,12 @@ class StarterSite extends Timber\Site {
 		/* var_dump(get_stylesheet_directory_uri().'/static/dist/main.css'); */
 		wp_dequeue_style('wp-block-library'); /* delete the defaut style of Gutenberg plugin */
 		wp_enqueue_style('project', get_stylesheet_directory_uri().'/static/dist/main.css');
+
+	}
+
+	public function topcat_lite_scripts(){
+		/* addition of the social media icons to my theme */
+		wp_enqueue_style( 'topcat-lite-fontawesome', get_template_directory_uri() . '/static/scss/fontawesome/font-awesome.scss' );
 	}
 
 	/* addition of custom style in Gutenberg blocks/components */
@@ -176,9 +182,9 @@ class StarterSite extends Timber\Site {
 		);
 
 		register_nav_menus([
-			"primary_menu" => "Menu principal YOLO",
+			"primary_menu" => "Menu principal",
 			"footer_menu" => "Menu du pied de page",
-			"social_menu" => "Menu liens icons"
+			"social_menu" => _("Menu liens icons")
 		]);
 	
 
@@ -229,7 +235,6 @@ class StarterSite extends Timber\Site {
 		if ( has_nav_menu( 'social' ) ) {
 			wp_nav_menu(
 				array(
-					'theme_location'  => 'social',
 					'container'       => 'div',
 					'container_id'    => 'menu-social',
 					'container_class' => 'menu-social',
@@ -258,10 +263,3 @@ class StarterSite extends Timber\Site {
 
 new StarterSite();
 
-/* 
-function tbx_scripts() {
-	if(is_page()) {
-		wp_enqueue_style('home_page_style', get_stylesheet_directory_uri() . '/static/css/main.css', 1.0);
-	}
-}
-add_action('wp_enqueue_scripts', 'tbx_scripts'); */

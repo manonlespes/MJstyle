@@ -1,13 +1,21 @@
+{# {{ function('wp_nav_menu') }} #}
 
-<div id="menu-social" class="menu-social">
-	<ul>
-		{% for item in social_menu.items %}
-		<li>
-			<a target="{{item.target}}"  href="{{item.link}}">{{item.content}}</a>
-		</li>
-	</ul>
-	{# comment faire apparaître mes icons ici et comment faire en sorte que dans ce menu, on peut rajouter une icon à choisir... #}
+{% if social_menu %}
+	<div
+		id="menu-social" class="menu-social">
 
-{% endfor %}
+	{# 	<pre>
+			{{ dump() }}
+		</pre>
+		  #}
+		 
+		<ul class="social-icons">
+			{% for item in social_menu.items %}
+				<li><a href="mailto:{{site.admin_email}}">{{site.admin_email}}</a></li>
+				<li><a target="_blank"href="{{item.url}}">{{item.post_name}}</a></li>
+			</ul>
 
-</div>
+		{% endfor %}
+
+	</div>
+{% endif %}
