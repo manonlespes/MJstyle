@@ -1,10 +1,12 @@
 {% extends "base.twig" %}
 
+{# skeleton of a simple block in a page #}
+
 {% block content %}
 	<div class="content-wrapper">
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
-				<h2 class="article-h2">{{post.title}}</h2>
+				{# <h2 class="article-h2">{{post.title}}</h2> TODO faire en soryte que le titre ACCEUIL n'apparaisse pas, mais pour les autres pages, le titres doity figurer#}
 				<div class="article-body">
 					{{post.content}}
 				</div>
@@ -16,3 +18,6 @@
 	</div>
 	<!-- /content-wrapper -->
 {% endblock %}
+
+
+

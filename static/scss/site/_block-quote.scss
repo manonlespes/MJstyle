@@ -1,0 +1,70 @@
+.article-body {
+   /*  img {
+        background-image: url("../../../../../uploads/2022/03/Fichier-17-8.png");
+        display: flex;
+        margin: auto;
+        object-fit: contain;
+        width: 100%;
+        opacity: 0.1;
+    }
+ */
+    .is-style-quote-of-the-day {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /*   height: 100%; */ /* TODO quand ce sera gérer aussi avec la auteur d'un block article à faire */
+        position: relative;
+
+        @include breakpoint($large) {
+            width: 55%;
+            margin: auto;
+            height: 350px;
+        }
+
+        p {
+            font-family: $fontTitle;
+            text-align: center;
+            margin-bottom: 80px;
+            font-size: 1.2em;
+            line-height: $spacer * 5;
+
+            &::before {
+                content: '"  ';
+                color: $red;
+                font-size: 2em;
+                font-family: $fontText;
+
+                @include breakpoint($medium) {
+                    font-size: 2.5em;
+                }
+            }
+
+            &::after {
+                content: '  "';
+                color: $red;
+                font-size: 2em;
+                font-family: $fontText;
+
+                @include breakpoint($medium) {
+                    font-size: 2.5em;
+                }
+            }
+
+            @include breakpoint($medium) {
+                font-size: 2em;
+            }
+
+            @include breakpoint($large) {
+                line-height: $spacer * 7;
+            }
+        }
+
+        cite {
+            align-self: flex-start;
+            position: absolute;
+            bottom: 0;
+            text-transform: capitalize;
+        }
+    }
+}

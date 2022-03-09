@@ -198,7 +198,6 @@ header .wrapper .btn-menu-responsive {
 .footer {
   display: flex;
   flex-direction: column;
-  border: 1px solid #1A1718;
 }
 @media screen and (min-width: 768px) {
   .footer {
@@ -351,6 +350,97 @@ header .wrapper .btn-menu-responsive {
   font-size: 0.8em;
 }
 
+.wp-block-colums {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .wp-block-colums {
+    flex-direction: row;
+  }
+}
+
+.wp-block-column {
+  flex: 2;
+}
+
+.wp-container-1 .wp-block-colums {
+  display: none;
+}
+
+.article-body {
+  /*  img {
+         background-image: url("../../../../../uploads/2022/03/Fichier-17-8.png");
+         display: flex;
+         margin: auto;
+         object-fit: contain;
+         width: 100%;
+         opacity: 0.1;
+     }
+  */
+}
+.article-body .is-style-quote-of-the-day {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*   height: 100%; */
+  /* TODO quand ce sera gérer aussi avec la auteur d'un block article à faire */
+  position: relative;
+}
+@media screen and (min-width: 1024px) {
+  .article-body .is-style-quote-of-the-day {
+    width: 55%;
+    margin: auto;
+    height: 350px;
+  }
+}
+.article-body .is-style-quote-of-the-day p {
+  font-family: "Prisma";
+  text-align: center;
+  margin-bottom: 80px;
+  font-size: 1.2em;
+  line-height: 50px;
+}
+.article-body .is-style-quote-of-the-day p::before {
+  content: '"  ';
+  color: #C62A40;
+  font-size: 2em;
+  font-family: "ABeeZee";
+}
+@media screen and (min-width: 768px) {
+  .article-body .is-style-quote-of-the-day p::before {
+    font-size: 2.5em;
+  }
+}
+.article-body .is-style-quote-of-the-day p::after {
+  content: '  "';
+  color: #C62A40;
+  font-size: 2em;
+  font-family: "ABeeZee";
+}
+@media screen and (min-width: 768px) {
+  .article-body .is-style-quote-of-the-day p::after {
+    font-size: 2.5em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .article-body .is-style-quote-of-the-day p {
+    font-size: 2em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .article-body .is-style-quote-of-the-day p {
+    line-height: 70px;
+  }
+}
+.article-body .is-style-quote-of-the-day cite {
+  align-self: flex-start;
+  position: absolute;
+  bottom: 0;
+  text-transform: capitalize;
+}
+
 html {
   font-family: "ABeeZee";
 }
@@ -410,6 +500,19 @@ h3 {
 .is-style-personnalised-separator {
   height: 25px;
   background-color: #1A1718;
+}
+.is-style-personnalised-separator::before {
+  content: "···";
+  color: currentColor;
+  font-size: 1.5em;
+  letter-spacing: 2em;
+  /*rtl:ignore*/
+  padding-left: 2em;
+  font-family: serif;
+}
+
+.nivo-controllerNav {
+  left: 30 px;
 }
 
 :root {

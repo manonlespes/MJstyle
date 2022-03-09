@@ -97,6 +97,7 @@ class StarterSite extends Timber\Site {
 			'name'=> 'as-link-button',
 			'label'=> __('MJ Bouton')
 		]); 
+
 		register_block_style('core/quote', [
 			'name'=>'quote-of-the-day',
 			'label'=>__('MJ citation'), 
@@ -106,7 +107,9 @@ class StarterSite extends Timber\Site {
 		register_block_style('core/separator', [
 			'name'=>'personnalised-separator',
 			'label'=>__('MJ séparateur'), 
-			'is_default' => true
+			'is_default' => true, 
+			'container' => 'div'
+
 		]);
 
 	}
@@ -219,6 +222,7 @@ class StarterSite extends Timber\Site {
 			'unlink-homepage-logo' => true,
 		) );
 
+		add_theme_support('custom-background');
 		
 	}
 
