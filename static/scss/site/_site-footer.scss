@@ -42,17 +42,25 @@
                         align-items: center;
                         line-height: $spacer * 2.5;
 
-                        ul{
+                        ul {
                             @include unstyle-list();
                             text-align: center;
 
-                           .mail_contact{
-                               color: $red;
-                           }
+                            .mail_contact {
+                                color: $red;
+                            }
                         }
 
                         a {
                             font-size: 0.9em;
+
+                            @include breakpoint($medium) {
+                                font-size: 1em;
+                            }
+
+                            @include breakpoint($large) {
+                                font-size: 1.2em;
+                            }
                         }
                     }
                 }
@@ -74,11 +82,11 @@
                     img {
                         width: 30%;
 
-                        @include breakpoint($medium){
+                        @include breakpoint($medium) {
                             width: 70%;
                         }
 
-                        @include breakpoint($large){
+                        @include breakpoint($large) {
                             width: 40%;
                         }
                     }
@@ -86,6 +94,13 @@
             }
 
             &__nav {
+                @include breakpoint($medium) {
+                    width: 30%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
                 ul {
                     @include unstyle-list();
 
@@ -93,13 +108,21 @@
                         content: "♦ ";
                         color: $red;
                     }
-                }
 
-                @include breakpoint($medium) {
-                    width: 30%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
+                    @include breakpoint($medium) {
+                        line-height: $spacer * 2;
+
+                        a {
+                            font-size: 1em;
+                        }
+                    }
+
+                    @include breakpoint($large) {
+                        line-height: $spacer * 2.5;
+                        a {
+                            font-size: 1.2em;
+                        }
+                    }
                 }
             }
         }
