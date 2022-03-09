@@ -1,86 +1,128 @@
 .footer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 600px;
-    border: 1px solid black;
+    border: 1px solid $black;
 
-    .test {
-        &__contact {
+    @include breakpoint($medium) {
+        padding-top: $spacer * 2;
+        /* TODO fix the issue with the footer version Ipad */
+    }
+
+    &__contact {
+        .blocks {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            height: 50%;
-            margin: auto;
+            align-items: center;
 
-            &-content {
+            @include breakpoint($medium) {
+                flex-direction: row;
                 width: 100%;
-                height: 100%;
+                justify-content: space-evenly;
+            }
+
+            &__contact-content {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-evenly;
-                margin: auto;
+                align-items: center;
+                width: 100%;
 
-                div {
-                    margin: auto;
+                @include breakpoint($medium) {
+                    width: 30%;
                 }
 
-                .information {
-                    flex-direction: column;
+                &-items {
                     display: flex;
-                    justify-content: space-around;
-                    align-content: center;
+                    justify-content: space-evenly;
+                    width: 100%;
                     align-items: center;
+
+                    .information {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        line-height: $spacer * 2.5;
+
+                        ul{
+                            @include unstyle-list();
+                            text-align: center;
+
+                           .mail_contact{
+                               color: $red;
+                           }
+                        }
+
+                        a {
+                            font-size: 0.9em;
+                        }
+                    }
                 }
             }
-        }
 
-        &__nav {
-            height: 50%;
+            &__logo {
+                display: flex;
+                width: 100%;
+                margin-top: 10px;
 
-            ul {
-                @include unstyle-list();
-                text-align: left;
-                line-height: $spacer * 2.5;
+                @include breakpoint($medium) {
+                    width: 30%;
+                    margin-top: 0;
+                }
 
-                li::before {
-                    content: "→  ";
-                    color: $red;
-                    font-weight: bolder;
-                    width: 2em;
-                    margin-left: 1em;
+                a {
+                    text-align: center;
+
+                    img {
+                        width: 30%;
+
+                        @include breakpoint($medium){
+                            width: 70%;
+                        }
+
+                        @include breakpoint($large){
+                            width: 40%;
+                        }
+                    }
+                }
+            }
+
+            &__nav {
+                ul {
+                    @include unstyle-list();
+
+                    li::before {
+                        content: "♦ ";
+                        color: $red;
+                    }
+                }
+
+                @include breakpoint($medium) {
+                    width: 30%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                 }
             }
         }
     }
 
     &__copyright {
+        margin-top: $spacer * 2;
         background-color: $black;
-        height: 33.33333%;
-        width: 100%;
         color: $white;
         display: flex;
         flex-direction: column;
+        height: 100%;
+        align-items: center;
         justify-content: space-evenly;
-        text-align: center;
-        margin: auto;
+
+        & + p {
+            margin-bottom: 0;
+        }
 
         &-links {
             display: flex;
-            margin: auto;
+            width: 90%;
             justify-content: space-evenly;
-            width: 100%;
-        }
-
-        .mention_design {
-            font-size: 0.8em;
-
-            @include breakpoint($medium) {
-                font-size: inherit;
-            }
         }
 
         a {
@@ -90,9 +132,9 @@
                 color: $grey;
             }
         }
-    }
 
-    h3 {
-        text-align: center;
+        .mention_design {
+            font-size: 0.8em;
+        }
     }
 }
