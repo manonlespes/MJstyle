@@ -368,18 +368,41 @@ header .wrapper .btn-menu-responsive {
   display: none;
 }
 
-.article-body {
-  /*  img {
-         background-image: url("../../../../../uploads/2022/03/Fichier-17-8.png");
-         display: flex;
-         margin: auto;
-         object-fit: contain;
-         width: 100%;
-         opacity: 0.1;
-     }
-  */
+@media screen and (min-width: 768px) {
+  #post-81 {
+    height: 600px;
+  }
 }
-.article-body .is-style-quote-of-the-day {
+#post-81 .article-content {
+  max-height: 350px;
+}
+@media screen and (min-width: 768px) {
+  #post-81 .article-content {
+    max-height: 520px;
+  }
+}
+#post-81 .article-content .article-body {
+  position: relative;
+  display: flex;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#post-81 .article-content .article-body img {
+  display: flex;
+  margin: auto;
+  object-fit: contain;
+  width: 100%;
+  opacity: 0.1;
+  position: absolute;
+  max-height: 310px;
+}
+@media screen and (min-width: 768px) {
+  #post-81 .article-content .article-body img {
+    max-height: 500px;
+  }
+}
+#post-81 .article-content .article-body .is-style-quote-of-the-day {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -389,52 +412,52 @@ header .wrapper .btn-menu-responsive {
   position: relative;
 }
 @media screen and (min-width: 1024px) {
-  .article-body .is-style-quote-of-the-day {
+  #post-81 .article-content .article-body .is-style-quote-of-the-day {
     width: 55%;
     margin: auto;
     height: 350px;
   }
 }
-.article-body .is-style-quote-of-the-day p {
+#post-81 .article-content .article-body .is-style-quote-of-the-day p {
   font-family: "Prisma";
   text-align: center;
   margin-bottom: 80px;
   font-size: 1.2em;
   line-height: 50px;
 }
-.article-body .is-style-quote-of-the-day p::before {
+#post-81 .article-content .article-body .is-style-quote-of-the-day p::before {
   content: '"  ';
   color: #C62A40;
   font-size: 2em;
   font-family: "ABeeZee";
 }
 @media screen and (min-width: 768px) {
-  .article-body .is-style-quote-of-the-day p::before {
+  #post-81 .article-content .article-body .is-style-quote-of-the-day p::before {
     font-size: 2.5em;
   }
 }
-.article-body .is-style-quote-of-the-day p::after {
+#post-81 .article-content .article-body .is-style-quote-of-the-day p::after {
   content: '  "';
   color: #C62A40;
   font-size: 2em;
   font-family: "ABeeZee";
 }
 @media screen and (min-width: 768px) {
-  .article-body .is-style-quote-of-the-day p::after {
+  #post-81 .article-content .article-body .is-style-quote-of-the-day p::after {
     font-size: 2.5em;
   }
 }
 @media screen and (min-width: 768px) {
-  .article-body .is-style-quote-of-the-day p {
+  #post-81 .article-content .article-body .is-style-quote-of-the-day p {
     font-size: 2em;
   }
 }
 @media screen and (min-width: 1024px) {
-  .article-body .is-style-quote-of-the-day p {
+  #post-81 .article-content .article-body .is-style-quote-of-the-day p {
     line-height: 70px;
   }
 }
-.article-body .is-style-quote-of-the-day cite {
+#post-81 .article-content .article-body .is-style-quote-of-the-day cite {
   align-self: flex-start;
   position: absolute;
   bottom: 0;

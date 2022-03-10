@@ -17,7 +17,8 @@
 			<div class="btn-menu-responsive">menu</div>
 			<!-- #nav -->
 			<div class="logo_title">
-				<a href="{{site.url}}" rel="home"> <img src="{{custom_logo_url}}" alt="{{image.alt}}"></a>
+				<a href="{{site.url}}" rel="home">
+					<img src="{{custom_logo_url}}" alt="{{image.alt}}"></a>
 				<h1>{{site.name}}</h1>
 			</div>
 		</div>
@@ -25,19 +26,25 @@
 </header>
 
 <section id="content" role="main" class="content-wrapper">
-	{% if title %}
+	<div class="wrapper">
+		{% block content %}
+			{{post.content}}
+		{% endblock %}
+	</div>
+
+	{# {% if title %}
 		<h2>{{title}}</h2>
 	{% endif %}
 	<div class="wrapper {{sidebar_class}}">
 		{% block content %}
 			Sorry, no content
 		{% endblock %}
-	</div>
+	</div> #}
 	{# {% if sidebar %}
-		<aside class="layout-sidebar">
-			{{sidebar}}
-		</aside>
-	{% endif %} #}
+			<aside class="layout-sidebar">
+				{{sidebar}}
+			</aside>
+		{% endif %} #}
 </section>
 
 {% block footer %}
