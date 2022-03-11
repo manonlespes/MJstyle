@@ -595,26 +595,6 @@ h3 {
   left: 30 px;
 }
 
-:root {
-  --color-text: $black ;
-}
-
-@font-face {
-  src: url("http://fonts.cdnfonts.com/css/prisma");
-  font-family: "Prisma", sans-serif;
-}
-@font-face {
-  src: url("https://fonts.googleapis.com/css2?family=ABeeZee&display=swap");
-  font-family: "ABeeZee", sans-serif;
-}
-/* @mixin facebook {
-    content: "\f09a";
-}
-
-@mixin youtube {
-    content: "\f167";
-}
- */
 /* importaion of the folder scss with all font-awesone icons */
 /*!
  * Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com
