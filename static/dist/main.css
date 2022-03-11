@@ -121,11 +121,11 @@ header .wrapper .logo_title {
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
 }
 @media screen and (min-width: 768px) {
   header .wrapper .logo_title {
     height: 75%;
-    margin-top: 20px;
   }
 }
 header .wrapper .logo_title a {
@@ -146,14 +146,8 @@ header .wrapper .logo_title h1 {
   padding: 0;
   margin: 0;
   margin-top: 25px;
-  height: 30%;
   display: flex;
   align-items: center;
-}
-@media screen and (min-width: 768px) {
-  header .wrapper .logo_title h1 {
-    margin-top: 0;
-  }
 }
 header .wrapper .nav-social {
   height: 15%;
@@ -350,24 +344,22 @@ header .wrapper .btn-menu-responsive {
   font-size: 0.8em;
 }
 
-.wp-block-colums {
+.wp-block-columns {
+  /* @include grid(); */
   display: flex;
   flex-direction: column;
+  grid-gap: 10px;
 }
-@media screen and (min-width: 768px) {
-  .wp-block-colums {
-    flex-direction: row;
-  }
-}
-
-.wp-block-column {
+.wp-block-columns .wp-block-column {
   flex: 2;
+  padding-right: 20px;
+  padding-left: 20px;
+  border: 1px solid #1A1718;
 }
 
-.wp-container-1 .wp-block-colums {
-  display: none;
-}
-
+/* .wp-container-1 .wp-block-colums{
+    display: none;
+} */
 @media screen and (min-width: 768px) {
   #post-81 {
     height: 600px;
@@ -468,6 +460,10 @@ html {
   font-family: "ABeeZee";
 }
 
+h1 + *, h2 + *, h3 + *, h4 + * {
+  margin-top: 20px;
+}
+
 h1 {
   font-family: "Prisma";
   /*    font-weight: 600; */
@@ -492,7 +488,11 @@ h3 {
   line-height: 20px;
 }
 
-.is-style-as-link-button {
+* + .wp-block-buttons {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.wp-block-buttons .is-style-as-link-button {
   transition: all 0.3s ease-in-out;
   width: 133px;
   height: 30px;
@@ -504,18 +504,18 @@ h3 {
   justify-content: center;
   align-items: center;
 }
-.is-style-as-link-button .wp-block-button__link {
+.wp-block-buttons .is-style-as-link-button .wp-block-button__link {
   color: #f1f5f8;
   text-align: center;
   text-transform: uppercase;
   font-family: "Prisma";
   letter-spacing: 0.1em;
 }
-.is-style-as-link-button:hover {
+.wp-block-buttons .is-style-as-link-button:hover {
   background-color: #f1f5f8;
   cursor: pointer;
 }
-.is-style-as-link-button:hover .wp-block-button__link {
+.wp-block-buttons .is-style-as-link-button:hover .wp-block-button__link {
   color: #1A1718;
   cursor: pointer;
 }

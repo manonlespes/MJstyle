@@ -1,17 +1,16 @@
-.wp-block-colums {
+.wp-block-columns {
+    /* @include grid(); */
     display: flex;
     flex-direction: column;
+    grid-gap: $spacer;
 
-    @include breakpoint ($medium){
-        flex-direction: row;
-
+    .wp-block-column {
+        flex: 2;
+        padding-right: $spacer * 2;
+        padding-left: $spacer * 2;
+        border:1px solid $black;
     }
 }
-
-.wp-block-column {
-    flex: 2;
-}
-
-.wp-container-1 .wp-block-colums{
+/* .wp-container-1 .wp-block-colums{
     display: none;
-}
+} */

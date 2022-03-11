@@ -1,30 +1,37 @@
-.is-style-as-link-button {
-    @include transition();
-    width: 133px;
-    height: 30px;
-    background-color: $black;
-    border: 1px solid $black;
-    border-radius: 10px;
-    box-shadow: 5px 3px 5px 1px rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .wp-block-button__link {
-        color: $white;
-        text-align: center;
-        text-transform: uppercase;
-        font-family: $fontTitle;
-        letter-spacing: 0.1em;
+.wp-block-buttons {
+    * + & {
+        margin-top: $spacer * 2;
+        margin-bottom: $spacer * 2;
     }
 
-    &:hover{
-        background-color: $white;
-        cursor: pointer;
-    }
+    .is-style-as-link-button {
+        @include transition();
+        width: 133px;
+        height: 30px;
+        background-color: $black;
+        border: 1px solid $black;
+        border-radius: 10px;
+        box-shadow: 5px 3px 5px 1px rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    &:hover .wp-block-button__link{
-        color:$black;
-        cursor: pointer;
+        .wp-block-button__link {
+            color: $white;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: $fontTitle;
+            letter-spacing: 0.1em;
+        }
+
+        &:hover {
+            background-color: $white;
+            cursor: pointer;
+        }
+
+        &:hover .wp-block-button__link {
+            color: $black;
+            cursor: pointer;
+        }
     }
 }
