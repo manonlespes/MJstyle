@@ -6,9 +6,74 @@
 
     .wp-block-column {
         flex: 2;
-        padding-right: $spacer * 2;
-        padding-left: $spacer * 2;
-        border:1px solid $black;
+        padding-right: $spacer * 4;
+        padding-left: $spacer * 4;
+        border: 1px solid $black;
+
+        /*  {# block with 2 blocks of text and an image #} */
+        .block__1 {
+            @include breakpoint($medium) {
+                display: flex;
+            }
+
+            &__content {
+                @include breakpoint($medium) {
+                    width: 50%;
+                }
+            }
+
+            &__thumbnail {
+                @include breakpoint($medium) {
+                    width: 50%;
+                }
+            }
+        }
+
+        .block__2, .block__3, .block__4{
+            @include breakpoint($large){
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &__content {
+                @include breakpoint($large) {
+                    width: 80%;
+                }
+            }
+            
+        }
+
+        .wp-block-buttons{
+            display: flex;
+            justify-content: center;
+        }
+
+        h3{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+
+            @include breakpoint ($medium){
+                font-size: 1.5em;
+            }
+
+            &::before, &::after{
+                content: "-";
+                color: $red;
+                font-family: $fontText;
+                font-size: 1.2em;
+
+                @include breakpoint($medium){
+                    font-size: 1.6em;
+                }
+            }
+        }
+
+        p{
+            text-align: center
+        };
     }
 }
 /* .wp-container-1 .wp-block-colums{
