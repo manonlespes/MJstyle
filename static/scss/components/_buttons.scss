@@ -6,15 +6,16 @@
 
     .is-style-as-link-button {
         @include transition();
-        width: 133px;
-        height: 30px;
+        height: 35px;
         background-color: $black;
         border: 1px solid $black;
-        border-radius: 10px;
-        box-shadow: 5px 3px 5px 1px rgba(0, 0, 0, 0.3);
+        border-radius: $spacer*2;
+        box-shadow: 5px 3px 5px 1px rgba(0, 0, 0, 0.2);
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: $spacer *2;
+        width: max-content;
 
         .wp-block-button__link {
             color: $white;
@@ -27,6 +28,7 @@
         &:hover {
             background-color: $white;
             cursor: pointer;
+            box-shadow: 5px 3px 5px 1px rgba(0, 0, 0, 0.3);
         }
 
         &:hover .wp-block-button__link {

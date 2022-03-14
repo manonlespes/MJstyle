@@ -68,7 +68,6 @@ class StarterSite extends Timber\Site {
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_action('wp_enqueue_scripts', array($this, 'enqueue_styles_and_scripts'));
 		add_action('after_setup_theme', array($this, 'register_block_styles')); /* avoid too many classes and to overload the style with classes */
-		
 		parent::__construct();
 	}
 	/** This is where you can register custom post types. */
@@ -115,8 +114,6 @@ class StarterSite extends Timber\Site {
 
 	}
 
-	
-
 	/** This is where you add some context
 	 *
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
@@ -133,6 +130,7 @@ class StarterSite extends Timber\Site {
 		$context['social_menu'] = new Timber\Menu('Social Menu');
 		return $context;
 	}
+
 
 	public function theme_supports() {
 		// Add default posts and comments RSS feed links to head.
@@ -254,48 +252,6 @@ class StarterSite extends Timber\Site {
 		}
 	}
 
-	add_action('acf/init', 'my_acf_init')/* use of ACF Blocks with Timber */;
-
-	function my_acf_init(){
-		// Bail out if function doesn’t exist.
-		if ( ! function_exists( 'acf_register_block' ) ) {
-			return;
-
-		// Register a new block.
-		acf_register_block( array(
-			'name'            => 'example_block',
-			'title'           => __( 'Example Block', 'mjBlock' ),
-			'description'     => __( 'A custom example block.', 'mjBlock' ),
-			'render_callback' => 'my_acf_block_render_callback',
-			'category'        => 'formatting',
-			'icon'            => 'admin-comments',
-			'keywords'        => array( 'example' ),
-		) );
-	}
-	/**
- *  This is the callback that displays the block.
- *
- * @param   array  $block      The block settings and attributes.
- * @param   string $content    The block content (emtpy string).
- * @param   bool   $is_preview True during AJAX preview.
- */
-function my_acf_block_render_callback( $block, $content = '', $is_preview = false ) {
-    $context = Timber::context();
-
-    // Store block values. block - with all data like block title, alignment etc
-    $context['block'] = $block;
-
-    // Store field values. fields - all custom fields - also all the fields created in ACF
-    $context['fields'] = get_fields();
-
-    // Store $is_preview value. is_preview - returns true during AJAX preview
-    $context['is_preview'] = $is_preview;
-
-    // Render the block.
-    Timber::render( 'block/example-block.twig', $context );
-}
-
-
 
 	/** This is where you can add your own functions to twig.
 	 *
@@ -311,3 +267,44 @@ function my_acf_block_render_callback( $block, $content = '', $is_preview = fals
 
 new StarterSite();
 
+add_action( 'acf/init', 'my_acf_init' );
+
+
+function my_acf_init() {
+	// Bail out if function doesn’t exist.
+	if ( ! function_exists( 'acf_register_block' ) ) {
+		return;
+	}
+
+	// Register a new block.
+	acf_register_block( array(
+		'name'            => 'example_block',
+		'title'           => __( 'Example Block'),
+		'description'     => __( 'A custom example block.'),
+		'render_callback' => 'my_acf_block_render_callback',
+		'category'        => 'formatting',
+		'icon'            => 'admin-comments',
+		'keywords'        => array( 'example' ),
+	) );
+}
+
+	/**
+ *  This is the callback that displays the block.
+ *
+ * @param   array  $block      The block settings and attributes.
+ * @param   string $content    The block content (emtpy string).
+ * @param   bool   $is_preview True during AJAX preview.
+ */
+function my_acf_block_render_callback( $block, $content = '', $is_preview = false ) {
+	$context = Timber::context( [
+		// Store block values.
+		'block'      => $block,
+		// Store field values.
+		'fields'     => get_fields(),
+		// Store $is_preview value.
+		'is_preview' => $is_preview,
+	] );
+
+	// Render the block.
+	Timber::render( 'block/example-block.twig', $context );
+}
