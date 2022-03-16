@@ -3,92 +3,92 @@
         height: 600px;
     } */
 
-/*   .article-body {
-            position: relative;
-            display: flex;
-            height: 100%;
-            margin-top: $spacer * 2;
-            margin-bottom: $spacer * 2;
-
-            img {
-                display: flex;
-                margin: auto;
-                object-fit: contain;
-                width: 100%;
-                opacity: 0.1;
-                position: absolute;
-                max-height: 310px;
-
-                @include breakpoint($medium) {
-                    max-height: 500px;
-                }
-            } */
-
-.is-style-quote-of-the-day {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /*   height: 100%; */ /* TODO quand ce sera gérer aussi avec la auteur d'un block article à faire */
+.article-body {
     position: relative;
+    display: flex;
+    height: 100%;
+    margin-top: $spacer * 2;
+    margin-bottom: $spacer * 2;
 
-    @include breakpoint($large) {
-        width: 55%;
+    img {
+        display: flex;
         margin: auto;
-        max-height: 350px;
-        margin-top: $spacer;
-        margin-bottom: $spacer;
+        object-fit: contain;
+        width: 100%;
+        opacity: 0.1;
+        position: absolute;
+        max-height: 310px;
+
+        @include breakpoint($medium) {
+            max-height: 500px;
+        }
     }
 
-    p {
-        font-family: $fontTitle;
-        text-align: center;
-        margin-bottom: 50px;
-        font-size: 1em;
-        line-height: $spacer * 3;
-
-        @include breakpoint($medium) {
-            margin-bottom: 80px;
-            font-size: 1.2em;
-            line-height: $spacer * 5;
-        }
-
-        &::before {
-            content: '"  ';
-            color: $red;
-            font-size: 2em;
-            font-family: $fontText;
-
-            @include breakpoint($medium) {
-                font-size: 2.5em;
-            }
-        }
-
-        &::after {
-            content: '  "';
-            color: $red;
-            font-size: 2em;
-            font-family: $fontText;
-
-            @include breakpoint($medium) {
-                font-size: 2.5em;
-            }
-        }
-
-        @include breakpoint($medium) {
-            font-size: 2em;
-        }
+    .is-style-quote-of-the-day {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /*   height: 100%; */ /* TODO quand ce sera gérer aussi avec la auteur d'un block article à faire */
+        position: relative;
 
         @include breakpoint($large) {
-            line-height: $spacer * 7;
+            width: 55%;
+            margin: auto;
+            max-height: 350px;
+            margin-top: $spacer;
+            margin-bottom: $spacer;
+        }
+
+        p {
+            font-family: $fontTitle;
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 1em;
+            line-height: $spacer * 3;
+
+            @include breakpoint($medium) {
+                margin-bottom: 80px;
+                font-size: 1.2em;
+                line-height: $spacer * 5;
+            }
+
+            &::before {
+                content: '"  ';
+                color: $red;
+                font-size: 2em;
+                font-family: $fontText;
+
+                @include breakpoint($medium) {
+                    font-size: 2.5em;
+                }
+            }
+
+            &::after {
+                content: '  "';
+                color: $red;
+                font-size: 2em;
+                font-family: $fontText;
+
+                @include breakpoint($medium) {
+                    font-size: 2.5em;
+                }
+            }
+
+            @include breakpoint($medium) {
+                font-size: 2em;
+            }
+
+            @include breakpoint($large) {
+                line-height: $spacer * 7;
+            }
+        }
+
+        cite {
+            align-self: flex-start;
+            position: absolute;
+            bottom: 0;
+            text-transform: capitalize;
         }
     }
-
-    cite {
-        align-self: flex-start;
-        position: absolute;
-        bottom: 0;
-        text-transform: capitalize;
-    }
 }
-

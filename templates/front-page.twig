@@ -1,8 +1,11 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	{{post.content}}
+{{post.content}}
 
+{# <pre>
+	{{ dump(post.content) }}
+</pre> #}
 	<div class="wp-block-columns">
 		{# block with 2 blocks of text and an image #}
 		<div class="wp-block-column">

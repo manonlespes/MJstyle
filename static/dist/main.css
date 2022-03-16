@@ -437,27 +437,28 @@ header .wrapper .btn-menu-responsive {
     @include breakpoint($medium) {
         height: 600px;
     } */
-/*   .article-body {
-            position: relative;
-            display: flex;
-            height: 100%;
-            margin-top: $spacer * 2;
-            margin-bottom: $spacer * 2;
-
-            img {
-                display: flex;
-                margin: auto;
-                object-fit: contain;
-                width: 100%;
-                opacity: 0.1;
-                position: absolute;
-                max-height: 310px;
-
-                @include breakpoint($medium) {
-                    max-height: 500px;
-                }
-            } */
-.is-style-quote-of-the-day {
+.article-body {
+  position: relative;
+  display: flex;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.article-body img {
+  display: flex;
+  margin: auto;
+  object-fit: contain;
+  width: 100%;
+  opacity: 0.1;
+  position: absolute;
+  max-height: 310px;
+}
+@media screen and (min-width: 768px) {
+  .article-body img {
+    max-height: 500px;
+  }
+}
+.article-body .is-style-quote-of-the-day {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -467,7 +468,7 @@ header .wrapper .btn-menu-responsive {
   position: relative;
 }
 @media screen and (min-width: 1024px) {
-  .is-style-quote-of-the-day {
+  .article-body .is-style-quote-of-the-day {
     width: 55%;
     margin: auto;
     max-height: 350px;
@@ -475,7 +476,7 @@ header .wrapper .btn-menu-responsive {
     margin-bottom: 10px;
   }
 }
-.is-style-quote-of-the-day p {
+.article-body .is-style-quote-of-the-day p {
   font-family: "Prisma";
   text-align: center;
   margin-bottom: 50px;
@@ -483,45 +484,45 @@ header .wrapper .btn-menu-responsive {
   line-height: 30px;
 }
 @media screen and (min-width: 768px) {
-  .is-style-quote-of-the-day p {
+  .article-body .is-style-quote-of-the-day p {
     margin-bottom: 80px;
     font-size: 1.2em;
     line-height: 50px;
   }
 }
-.is-style-quote-of-the-day p::before {
+.article-body .is-style-quote-of-the-day p::before {
   content: '"  ';
   color: #C62A40;
   font-size: 2em;
   font-family: "ABeeZee";
 }
 @media screen and (min-width: 768px) {
-  .is-style-quote-of-the-day p::before {
+  .article-body .is-style-quote-of-the-day p::before {
     font-size: 2.5em;
   }
 }
-.is-style-quote-of-the-day p::after {
+.article-body .is-style-quote-of-the-day p::after {
   content: '  "';
   color: #C62A40;
   font-size: 2em;
   font-family: "ABeeZee";
 }
 @media screen and (min-width: 768px) {
-  .is-style-quote-of-the-day p::after {
+  .article-body .is-style-quote-of-the-day p::after {
     font-size: 2.5em;
   }
 }
 @media screen and (min-width: 768px) {
-  .is-style-quote-of-the-day p {
+  .article-body .is-style-quote-of-the-day p {
     font-size: 2em;
   }
 }
 @media screen and (min-width: 1024px) {
-  .is-style-quote-of-the-day p {
+  .article-body .is-style-quote-of-the-day p {
     line-height: 70px;
   }
 }
-.is-style-quote-of-the-day cite {
+.article-body .is-style-quote-of-the-day cite {
   align-self: flex-start;
   position: absolute;
   bottom: 0;
