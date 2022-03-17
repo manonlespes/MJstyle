@@ -6,6 +6,13 @@
  */
 #}
 
+
+
+{% block content %}
+	
+		<pre>
+            {{ dump(post) }}
+        </pre>
 {% if is_preview %}
     <p>I will only appear in the editor.</p>
 {% endif %}
@@ -14,6 +21,7 @@
     <h1>{{ fields.title }}</h1>
     <p>{{ fields.description }}</p>
 </div>
+{% endblock %}
 <style type="text/css">
     #testimonial-{{ block.id }} {
         background: {{ fields.background_color }};

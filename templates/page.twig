@@ -1,18 +1,35 @@
 {% extends "base.twig" %}
 
+{# 	je suis dans la page.twig #}
+
 {% block content %}
 	<div class="content-wrapper">
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
 				<h1 class="article-h1">{{post.title}}</h1>
 				<div class="article-body">
-				{% for my_article in articles %}
+					{# <pre>
+						{{ dump(post) }}
+					</pre> #}
+
+					{% if is_preview %}
+						<p>I will only appear in the editor.</p>
+					{% endif %}
+
+					{% for item in post.custom.fields %}
+						<div id={{item.id}} class="ici">
+							<p>{{ item }}</p>
+						</div>
+					{% endfor %}
+
+					{% for my_article in articles %}
+
+						{{post.content}}
+					{% endfor %}
 					
-					{{post.content}}
-				{% endfor %}
-					je suis dans la page.twig
 				</div>
 			</section>
 		</article>
-	</div><!-- /content-wrapper -->
+	</div>
+	<!-- /content-wrapper -->
 {% endblock %}

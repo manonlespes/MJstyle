@@ -68,6 +68,7 @@ class StarterSite extends Timber\Site {
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_action('wp_enqueue_scripts', array($this, 'enqueue_styles_and_scripts'));
 		add_action('after_setup_theme', array($this, 'register_block_styles')); /* avoid too many classes and to overload the style with classes */
+		add_action( 'acf/init', 'my_acf_init' );
 		parent::__construct();
 	}
 	/** This is where you can register custom post types. */
@@ -264,6 +265,53 @@ class StarterSite extends Timber\Site {
 		return $twig;
 	}
 
+
+
+
+
+
+
+
+
 }
+
+
+
+function my_acf_init() {
+	// Bail out if function doesn’t exist.
+	if ( ! function_exists( 'acf_register_block' ) ) {
+		return;
+	}
+
+	// Register a new block.
+	acf_register_block( array(
+		'name'            => 'example_block',
+		'title'           => __( 'Example Block', 'your-text-domain' ),
+		'description'     => __( 'A custom example block.', 'your-text-domain' ),
+		'render_callback' => 'my_acf_block_render_callback',
+		'category'        => 'formatting',
+		'icon'            => 'admin-comments',
+		'keywords'        => array( 'example' ),
+	) );
+}
+
+
+function my_acf_block_render_callback( $block, $content = '', $is_preview = false ) {
+	$context = Timber::context();
+
+	// Store block values.
+	$context['block'] = $block;
+
+	// Store field values.
+	$context['fields'] = get_fields();
+
+	// Store $is_preview value.
+	$context['is_preview'] = $is_preview;
+
+	// Render the block.
+	Timber::render( 'block/example-block.twig', $context );
+}
+
+
 
 new StarterSite();
