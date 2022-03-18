@@ -149,6 +149,11 @@ header .wrapper .logo_title h1 {
   display: flex;
   align-items: center;
 }
+@media screen and (min-width: 768px) {
+  header .wrapper .logo_title h1 {
+    font-size: 2rem;
+  }
+}
 header .wrapper .nav-social {
   height: 15%;
   display: flex;
@@ -182,6 +187,11 @@ header .wrapper .btn-menu-responsive {
   align-items: center;
   width: 90%;
   cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  header .wrapper .btn-menu-responsive {
+    font-size: 2rem;
+  }
 }
 @media screen and (min-width: 768px) {
   header .wrapper .btn-menu-responsive {
@@ -344,6 +354,14 @@ header .wrapper .btn-menu-responsive {
   font-size: 0.8em;
 }
 
+.article-body, .quote-container {
+  position: relative;
+  display: flex;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .article-content {
   display: flex;
   flex-direction: column;
@@ -437,14 +455,11 @@ header .wrapper .btn-menu-responsive {
     @include breakpoint($medium) {
         height: 600px;
     } */
-.article-body {
-  position: relative;
-  display: flex;
-  height: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
+.quote-container {
+  margin: auto;
+  width: 90%;
 }
-.article-body img {
+.quote-container img {
   display: flex;
   margin: auto;
   object-fit: contain;
@@ -454,11 +469,11 @@ header .wrapper .btn-menu-responsive {
   max-height: 310px;
 }
 @media screen and (min-width: 768px) {
-  .article-body img {
+  .quote-container img {
     max-height: 500px;
   }
 }
-.article-body .is-style-quote-of-the-day {
+.quote-container .is-style-quote-of-the-day {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -468,7 +483,7 @@ header .wrapper .btn-menu-responsive {
   position: relative;
 }
 @media screen and (min-width: 1024px) {
-  .article-body .is-style-quote-of-the-day {
+  .quote-container .is-style-quote-of-the-day {
     width: 55%;
     margin: auto;
     max-height: 350px;
@@ -476,63 +491,72 @@ header .wrapper .btn-menu-responsive {
     margin-bottom: 10px;
   }
 }
-.article-body .is-style-quote-of-the-day p {
+.quote-container .is-style-quote-of-the-day p {
   font-family: "Prisma";
   text-align: center;
-  margin-bottom: 50px;
-  font-size: 1em;
+  margin-bottom: 20px;
+  font-size: 0.9em;
   line-height: 30px;
 }
 @media screen and (min-width: 768px) {
-  .article-body .is-style-quote-of-the-day p {
+  .quote-container .is-style-quote-of-the-day p {
     margin-bottom: 80px;
     font-size: 1.2em;
     line-height: 50px;
   }
 }
-.article-body .is-style-quote-of-the-day p::before {
+@media screen and (min-width: 1024px) {
+  .quote-container .is-style-quote-of-the-day p {
+    font-size: 2em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .quote-container .is-style-quote-of-the-day p {
+    line-height: 70px;
+  }
+}
+.quote-container .is-style-quote-of-the-day p::before {
   content: '"  ';
   color: #C62A40;
   font-size: 2em;
   font-family: "ABeeZee";
 }
 @media screen and (min-width: 768px) {
-  .article-body .is-style-quote-of-the-day p::before {
+  .quote-container .is-style-quote-of-the-day p::before {
     font-size: 2.5em;
   }
 }
-.article-body .is-style-quote-of-the-day p::after {
+.quote-container .is-style-quote-of-the-day p::after {
   content: '  "';
   color: #C62A40;
   font-size: 2em;
   font-family: "ABeeZee";
 }
 @media screen and (min-width: 768px) {
-  .article-body .is-style-quote-of-the-day p::after {
+  .quote-container .is-style-quote-of-the-day p::after {
     font-size: 2.5em;
   }
 }
-@media screen and (min-width: 768px) {
-  .article-body .is-style-quote-of-the-day p {
-    font-size: 2em;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .article-body .is-style-quote-of-the-day p {
-    line-height: 70px;
-  }
-}
-.article-body .is-style-quote-of-the-day cite {
+.quote-container .is-style-quote-of-the-day cite {
   align-self: flex-start;
-  position: absolute;
-  bottom: 0;
   text-transform: capitalize;
+  font-size: 0.9em;
+  margin-left: 20px;
+}
+@media screen and (min-width: 768px) {
+  .quote-container .is-style-quote-of-the-day cite {
+    font-size: 1em;
+    /* margin-left: 20px; */
+  }
 }
 
 html {
   font-family: "ABeeZee";
 }
 
+h1, h2, h3, h4 {
+  color: #1A1718;
+}
 h1 + *, h2 + *, h3 + *, h4 + * {
   margin-top: 20px;
 }
@@ -543,6 +567,11 @@ h1 {
   font-style: normal;
   font-size: 1.8rem;
   line-height: 30px;
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
 
 h2 {
@@ -596,17 +625,32 @@ h3 {
 }
 
 .is-style-personnalised-separator {
-  height: 25px;
+  height: 85px;
   background-color: #1A1718;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 537px;
+  position: absolute;
+  right: 0;
+  border: 1px solid #1A1718;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  padding: 20px;
 }
-.is-style-personnalised-separator::before {
-  content: "···";
-  color: currentColor;
-  font-size: 1.5em;
-  letter-spacing: 2em;
-  /*rtl:ignore*/
-  padding-left: 2em;
-  font-family: serif;
+.is-style-personnalised-separator h2 {
+  font-family: "Prisma";
+  /*    font-weight: 600; */
+  font-style: normal;
+  font-size: 1.8rem;
+  line-height: 30px;
+  color: #f1f5f8;
+  letter-spacing: 5px;
+}
+@media screen and (min-width: 768px) {
+  .is-style-personnalised-separator h2 {
+    font-size: 2rem;
+  }
 }
 
 .nivo-controllerNav {

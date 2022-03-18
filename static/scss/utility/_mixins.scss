@@ -24,6 +24,10 @@
     @include hn();
     font-size: 1.8rem;
     line-height: $spacer * 3;
+
+    @include breakpoint($medium){
+        font-size: 2rem;
+    }
 }
 
 @mixin h2(){

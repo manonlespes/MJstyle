@@ -1,14 +1,20 @@
 .is-style-personnalised-separator {
-    height: 25px;
+    height: 85px;
     background-color: $black;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 537px;
+    position: absolute;
+    right: 0;
+    border: 1px solid $black;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    padding: 20px;
 
-    &::before {
-        content: "\00b7 \00b7 \00b7";
-        color: currentColor;
-        font-size: 1.5em;
-        letter-spacing: 2em;
-        /*rtl:ignore*/
-        padding-left: 2em;
-        font-family: serif;
+    h2 {
+        @include h1();
+        color: $white;
+        letter-spacing: 5px;
     }
 }

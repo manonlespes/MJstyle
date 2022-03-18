@@ -5,28 +5,31 @@
 {% block content %}
 	<div class="content-wrapper">
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
+			<section
+				class="article-content">
+				{# <h1 class="article-h1">{{post.title}}</h1> #}
 				<div class="article-body">
-					{# <pre>
-						{{ dump(post) }}
-					</pre> #}
 
-					{% if is_preview %}
-						<p>I will only appear in the editor.</p>
+					{% if post.custom.fields.personnalised_quote %}
+						<div class="quote-container">
+							<div class="is-style-quote-of-the-day">
+								<p>{{post.custom.fields.personnalised_quote}}</p>
+								<cite>{{post.custom.fields.author}}</cite>
+							</div>
+						</div>
+
 					{% endif %}
 
-					{% for item in post.custom.fields %}
-						<div id={{item.id}} class="ici">
-							<p>{{ item }}</p>
+					{# <pre>
+											{{ dump(post) }}
+										</pre> #}
+
+					{# {% if post.custom.fields.flash_info %}
+						<div class="is-style-personnalised-separator ">
+							<h2>{{post.custom.fields.flash_info}}</h2>
 						</div>
-					{% endfor %}
+					{% endif %} #}
 
-					{% for my_article in articles %}
-
-						{{post.content}}
-					{% endfor %}
-					
 				</div>
 			</section>
 		</article>
