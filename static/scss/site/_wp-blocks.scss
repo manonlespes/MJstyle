@@ -3,12 +3,14 @@
 .article-body {
     position: relative;
     display: flex;
+    flex-direction: column;
     height: 100%;
     margin-top: $spacer * 2;
     margin-bottom: $spacer * 2;
 }
 
 
+/* ce qu'il y a en dessous devra peut-être être supprimé */
 
 .article-content {
     display: flex;

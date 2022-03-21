@@ -5,10 +5,14 @@
 {% block content %}
 	<div class="content-wrapper">
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section
-				class="article-content">
+			<section class="article-content">
+
+				{# !  attention travail pour le moment que pour la page d'accueil... #}
 				{# <h1 class="article-h1">{{post.title}}</h1> #}
-				<div class="article-body">
+				{# ** le titre devra apparaître pour les autres pages #}
+
+					<div
+					class="article-body"> {# !  attention travail pour le moment que pour la page d'accueil... #}
 
 					{% if post.custom.fields.personnalised_quote %}
 						<div class="quote-container">
@@ -16,19 +20,33 @@
 								<p>{{post.custom.fields.personnalised_quote}}</p>
 								<cite>{{post.custom.fields.author}}</cite>
 							</div>
+
+							{% if post.custom.fields.quote_background %}
+								<div class="background-quote">
+									<img src="{{post.custom.fields.quote_background.guid}}">
+								</div>
+							{% endif %}
+						</div>
+
+					{% endif %}
+					{# end the personnalised_quote #}
+					
+					
+					{% if post.custom.fields.separator_flash_info %}
+				
+						<div class="is-style-personnalised-separator home-page-separator">
+							<h2>{{post.custom.fields.separator_flash_info}}</h2>
 						</div>
 
 					{% endif %}
 
+
 					{# <pre>
-											{{ dump(post) }}
-										</pre> #}
+							{{ dump(post.custom.fields) }}
+						</pre> #}
 
 					{# {% if post.custom.fields.flash_info %}
-						<div class="is-style-personnalised-separator ">
-							<h2>{{post.custom.fields.flash_info}}</h2>
-						</div>
-					{% endif %} #}
+																					 #}
 
 				</div>
 			</section>

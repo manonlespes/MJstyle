@@ -1,20 +1,55 @@
 .is-style-personnalised-separator {
-    height: 85px;
+    height: 40px;
+    width: 160px;
+    max-width: 160px;
     background-color: $black;
     display: flex;
     justify-content: start;
     align-items: center;
-    width: 537px;
     position: absolute;
     right: 0;
     border: 1px solid $black;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    padding: 20px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: $spacer*2;
+
+    @include breakpoint($medium){
+        height: 65px;
+        width: 330px;
+        max-width: 330px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    @include breakpoint($large){
+        height: 85px;
+        width: 537px;
+        max-width: 537px;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
 
     h2 {
-        @include h1();
+        @include h2();
         color: $white;
-        letter-spacing: 5px;
+        letter-spacing: 1px;
+
+
+        @include breakpoint($large){
+            letter-spacing: 5px;
+        }
+    }
+}
+
+.home-page-separator{
+    @extend .is-style-personnalised-separator;
+    top: 180px;
+
+    @include breakpoint($medium){
+        top: 465px;
+    }
+
+    @include breakpoint($large){
+        top: 525px;
     }
 }

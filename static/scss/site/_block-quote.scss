@@ -5,21 +5,26 @@
 .quote-container {
     @extend .article-body;
     margin: auto;
-    width: 90%;
-    
-    
-    img {
-        display: flex;
-        margin: auto;
-        object-fit: contain;
-        width: 100%;
-        opacity: 0.1;
-        position: absolute;
-        max-height: 310px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 200px;
+    max-height: 200px;
+    border: 1px solid $black;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
 
-        @include breakpoint($medium) {
-            max-height: 500px;
-        }
+    @include breakpoint($medium) {
+        height: 500px;
+        max-height: 500px;
+        justify-content: center;
+    }
+
+    @include breakpoint($large) {
+        height: 565px;
+        max-height:565px;
     }
 
     .is-style-quote-of-the-day {
@@ -27,8 +32,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /*   height: 100%; */ /* TODO quand ce sera gérer aussi avec la auteur d'un block article à faire */
         position: relative;
+        height: 100%;
+        width: 80%;
+        margin: auto;
 
         @include breakpoint($large) {
             width: 55%;
@@ -88,9 +95,30 @@
             font-size: 0.9em;
             margin-left: 20px;
 
-            @include breakpoint($medium){
+            @include breakpoint($medium) {
                 font-size: 1em;
                 /* margin-left: 20px; */
+            }
+        }
+    }
+
+    .background-quote {
+        position: absolute;
+        height: 90%;
+        width: 100%;
+
+        @include breakpoint($medium) {
+            display: flex;
+            align-self: center;
+        }
+
+        img {
+            object-fit: contain;
+            width: 100%;
+            opacity: 0.25;
+            z-index: -6;
+
+            @include breakpoint($medium) {
             }
         }
     }

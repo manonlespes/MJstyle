@@ -141,8 +141,8 @@ header .wrapper .logo_title h1 {
   font-family: "Prisma";
   /*    font-weight: 600; */
   font-style: normal;
-  font-size: 1.8rem;
   line-height: 30px;
+  font-size: 1.2rem;
   padding: 0;
   margin: 0;
   margin-top: 25px;
@@ -150,6 +150,11 @@ header .wrapper .logo_title h1 {
   align-items: center;
 }
 @media screen and (min-width: 768px) {
+  header .wrapper .logo_title h1 {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 1024px) {
   header .wrapper .logo_title h1 {
     font-size: 2rem;
   }
@@ -179,8 +184,8 @@ header .wrapper .btn-menu-responsive {
   font-family: "Prisma";
   /*    font-weight: 600; */
   font-style: normal;
-  font-size: 1.8rem;
   line-height: 30px;
+  font-size: 1.2rem;
   height: 15%;
   display: flex;
   justify-content: flex-end;
@@ -189,6 +194,11 @@ header .wrapper .btn-menu-responsive {
   cursor: pointer;
 }
 @media screen and (min-width: 768px) {
+  header .wrapper .btn-menu-responsive {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 1024px) {
   header .wrapper .btn-menu-responsive {
     font-size: 2rem;
   }
@@ -357,11 +367,13 @@ header .wrapper .btn-menu-responsive {
 .article-body, .quote-container {
   position: relative;
   display: flex;
+  flex-direction: column;
   height: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
+/* ce qu'il y a en dessous devra peut-être être supprimé */
 .article-content {
   display: flex;
   flex-direction: column;
@@ -457,20 +469,28 @@ header .wrapper .btn-menu-responsive {
     } */
 .quote-container {
   margin: auto;
-  width: 90%;
-}
-.quote-container img {
-  display: flex;
-  margin: auto;
-  object-fit: contain;
   width: 100%;
-  opacity: 0.1;
-  position: absolute;
-  max-height: 310px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 200px;
+  max-height: 200px;
+  border: 1px solid #1A1718;
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
 }
 @media screen and (min-width: 768px) {
-  .quote-container img {
+  .quote-container {
+    height: 500px;
     max-height: 500px;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .quote-container {
+    height: 565px;
+    max-height: 565px;
   }
 }
 .quote-container .is-style-quote-of-the-day {
@@ -478,9 +498,10 @@ header .wrapper .btn-menu-responsive {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /*   height: 100%; */
-  /* TODO quand ce sera gérer aussi avec la auteur d'un block article à faire */
   position: relative;
+  height: 100%;
+  width: 80%;
+  margin: auto;
 }
 @media screen and (min-width: 1024px) {
   .quote-container .is-style-quote-of-the-day {
@@ -549,7 +570,23 @@ header .wrapper .btn-menu-responsive {
     /* margin-left: 20px; */
   }
 }
-
+.quote-container .background-quote {
+  position: absolute;
+  height: 90%;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .quote-container .background-quote {
+    display: flex;
+    align-self: center;
+  }
+}
+.quote-container .background-quote img {
+  object-fit: contain;
+  width: 100%;
+  opacity: 0.25;
+  z-index: -6;
+}
 html {
   font-family: "ABeeZee";
 }
@@ -565,10 +602,15 @@ h1 {
   font-family: "Prisma";
   /*    font-weight: 600; */
   font-style: normal;
-  font-size: 1.8rem;
   line-height: 30px;
+  font-size: 1.2rem;
 }
 @media screen and (min-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 1024px) {
   h1 {
     font-size: 2rem;
   }
@@ -578,8 +620,18 @@ h2 {
   font-family: "Prisma";
   /*    font-weight: 600; */
   font-style: normal;
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 30px;
+}
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h2 {
+    font-size: 1.8rem;
+  }
 }
 
 h3 {
@@ -624,32 +676,75 @@ h3 {
   cursor: pointer;
 }
 
-.is-style-personnalised-separator {
-  height: 85px;
+.is-style-personnalised-separator, .home-page-separator {
+  height: 40px;
+  width: 160px;
+  max-width: 160px;
   background-color: #1A1718;
   display: flex;
   justify-content: start;
   align-items: center;
-  width: 537px;
   position: absolute;
   right: 0;
   border: 1px solid #1A1718;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   padding: 20px;
 }
-.is-style-personnalised-separator h2 {
+@media screen and (min-width: 768px) {
+  .is-style-personnalised-separator, .home-page-separator {
+    height: 65px;
+    width: 330px;
+    max-width: 330px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .is-style-personnalised-separator, .home-page-separator {
+    height: 85px;
+    width: 537px;
+    max-width: 537px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+}
+.is-style-personnalised-separator h2, .home-page-separator h2 {
   font-family: "Prisma";
   /*    font-weight: 600; */
   font-style: normal;
-  font-size: 1.8rem;
+  font-size: 1rem;
   line-height: 30px;
   color: #f1f5f8;
-  letter-spacing: 5px;
+  letter-spacing: 1px;
 }
 @media screen and (min-width: 768px) {
-  .is-style-personnalised-separator h2 {
-    font-size: 2rem;
+  .is-style-personnalised-separator h2, .home-page-separator h2 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .is-style-personnalised-separator h2, .home-page-separator h2 {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .is-style-personnalised-separator h2, .home-page-separator h2 {
+    letter-spacing: 5px;
+  }
+}
+
+.home-page-separator {
+  top: 180px;
+}
+@media screen and (min-width: 768px) {
+  .home-page-separator {
+    top: 465px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home-page-separator {
+    top: 525px;
   }
 }
 
