@@ -14,43 +14,74 @@
 					<div
 					class="article-body"> {# !  attention travail pour le moment que pour la page d'accueil... #}
 
-					{% if post.custom.fields.personnalised_quote %}
-						<div class="quote-container">
-							<div class="is-style-quote-of-the-day">
-								<p>{{post.custom.fields.personnalised_quote}}</p>
-								<cite>{{post.custom.fields.author}}</cite>
+					<div class="background-slider">{{post.content}}</div>
+
+						{% if post.custom.fields.personnalised_quote %}
+							<div class="quote-container container-block">
+								<div class="is-style-quote-of-the-day">
+									<p>{{post.custom.fields.personnalised_quote}}</p>
+									<cite>{{post.custom.fields.author}}</cite>
+								</div>
+
+								{% if post.custom.fields.quote_background %}
+									<div class="background-quote">
+										<img src="{{post.custom.fields.quote_background.guid}}" alt="{{post.custom.fields.quote_background._wp_attachment_image_alt}}">
+									</div>
+								{% endif %}
+							</div>
+						{% endif %}
+						{# end the personnalised_quote #}
+
+
+						{% if post.custom.fields.separator_flash_info %}
+							<div class="is-style-personnalised-separator home-page-separator">
+								<h2>{{post.custom.fields.separator_flash_info}}</h2>
 							</div>
 
-							{% if post.custom.fields.quote_background %}
-								<div class="background-quote">
-									<img src="{{post.custom.fields.quote_background.guid}}">
+							<div class="container-block">
+
+								<div>
+									<h3>{{post.custom.fields.information_1}}</h3>
+									<p>{{post.custom.fields.sous-info_1}}</p>
 								</div>
-							{% endif %}
-						</div>
 
-					{% endif %}
-					{# end the personnalised_quote #}
-					
-					
-					{% if post.custom.fields.separator_flash_info %}
-				
-						<div class="is-style-personnalised-separator home-page-separator">
-							<h2>{{post.custom.fields.separator_flash_info}}</h2>
-						</div>
+								{# 	{% if post.custom.fields.btn-link %}#}
+								<div class="wp-block-buttons">
+									<div class="is-style-as-link-button">
+										<a class="wp-block-button__link" href="">{{post.custom.fields.call-to-action-btn_1}}</a>
+									</div>
+								</div>
+								{# {% endif %} #}
 
-					{% endif %}
+								{# {% if post.custom.fields.information_2 %}
+								
+															<div>
+																<h3>{{post.custom.fields.information_2}}</h3>
+																<p>{{post.custom.fields.sous-info_2}}</p>
+															</div>
+								
+															{% endif %}
+								
+															{% if post.custom.fields.btn-link_2 %}
+																<div>
+																	<button class="is-style-as-link-button">
+																		<a class="wp-block-button__link" href="{{btn-link_2}}">{{post.custom.fields.call-to-action-btn_2}}</a>
+																	</button>
+																</div>
+															{% endif %} #}
+							</div> {# end of the div container-block #}
 
-
-					{# <pre>
-							{{ dump(post.custom.fields) }}
-						</pre> #}
+						{% endif %}{# end the separator flash-info #}
+{# 
+					<pre>
+					{{ dump(post.custom.fields.call-to-action-btn_1) }}
+					</pre> #}
 
 					{# {% if post.custom.fields.flash_info %}
-																					 #}
-
+																																															 #}
 				</div>
-			</section>
-		</article>
-	</div>
-	<!-- /content-wrapper -->
-{% endblock %}
+			</div> {# end of div article-body #}
+		</section>
+	</article>
+</div>
+<!-- /content-wrapper -->{% endblock %}

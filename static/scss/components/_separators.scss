@@ -43,13 +43,13 @@
 
 .home-page-separator{
     @extend .is-style-personnalised-separator;
-    top: 180px;
+    top: 330px;
 
     @include breakpoint($medium){
-        top: 465px;
+        top: 965px;
     }
 
     @include breakpoint($large){
-        top: 525px;
+        top: 1144px;
     }
 }

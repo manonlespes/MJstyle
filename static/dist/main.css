@@ -364,13 +364,39 @@ header .wrapper .btn-menu-responsive {
   font-size: 0.8em;
 }
 
-.article-body, .quote-container {
+.article-body, .article-body .container-block {
   position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin-top: 20px;
   margin-bottom: 20px;
+}
+.article-body .background-slider {
+  background-color: #1A1718;
+  padding: 10px;
+}
+.article-body .container-block {
+  margin: auto;
+  width: 100%;
+  height: 200px;
+  max-height: 200px;
+  border: 1px solid #1A1718;
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+@media screen and (min-width: 768px) {
+  .article-body .container-block {
+    height: 500px;
+    max-height: 500px;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .article-body .container-block {
+    height: 565px;
+    max-height: 565px;
+  }
 }
 
 /* ce qu'il y a en dessous devra peut-être être supprimé */
@@ -467,33 +493,7 @@ header .wrapper .btn-menu-responsive {
     @include breakpoint($medium) {
         height: 600px;
     } */
-.quote-container {
-  margin: auto;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  height: 200px;
-  max-height: 200px;
-  border: 1px solid #1A1718;
-  border-top-style: hidden;
-  border-left-style: hidden;
-  border-right-style: hidden;
-}
-@media screen and (min-width: 768px) {
-  .quote-container {
-    height: 500px;
-    max-height: 500px;
-    justify-content: center;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .quote-container {
-    height: 565px;
-    max-height: 565px;
-  }
-}
-.quote-container .is-style-quote-of-the-day {
+.is-style-quote-of-the-day {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -504,15 +504,15 @@ header .wrapper .btn-menu-responsive {
   margin: auto;
 }
 @media screen and (min-width: 1024px) {
-  .quote-container .is-style-quote-of-the-day {
+  .is-style-quote-of-the-day {
     width: 55%;
     margin: auto;
-    max-height: 350px;
+    /* max-height: 350px; */
     margin-top: 10px;
     margin-bottom: 10px;
   }
 }
-.quote-container .is-style-quote-of-the-day p {
+.is-style-quote-of-the-day p {
   font-family: "Prisma";
   text-align: center;
   margin-bottom: 20px;
@@ -520,68 +520,69 @@ header .wrapper .btn-menu-responsive {
   line-height: 30px;
 }
 @media screen and (min-width: 768px) {
-  .quote-container .is-style-quote-of-the-day p {
+  .is-style-quote-of-the-day p {
     margin-bottom: 80px;
     font-size: 1.2em;
     line-height: 50px;
   }
 }
 @media screen and (min-width: 1024px) {
-  .quote-container .is-style-quote-of-the-day p {
+  .is-style-quote-of-the-day p {
     font-size: 2em;
   }
 }
 @media screen and (min-width: 1024px) {
-  .quote-container .is-style-quote-of-the-day p {
+  .is-style-quote-of-the-day p {
     line-height: 70px;
   }
 }
-.quote-container .is-style-quote-of-the-day p::before {
+.is-style-quote-of-the-day p::before {
   content: '"  ';
   color: #C62A40;
   font-size: 2em;
   font-family: "ABeeZee";
 }
 @media screen and (min-width: 768px) {
-  .quote-container .is-style-quote-of-the-day p::before {
+  .is-style-quote-of-the-day p::before {
     font-size: 2.5em;
   }
 }
-.quote-container .is-style-quote-of-the-day p::after {
+.is-style-quote-of-the-day p::after {
   content: '  "';
   color: #C62A40;
   font-size: 2em;
   font-family: "ABeeZee";
 }
 @media screen and (min-width: 768px) {
-  .quote-container .is-style-quote-of-the-day p::after {
+  .is-style-quote-of-the-day p::after {
     font-size: 2.5em;
   }
 }
-.quote-container .is-style-quote-of-the-day cite {
+.is-style-quote-of-the-day cite {
   align-self: flex-start;
   text-transform: capitalize;
   font-size: 0.9em;
   margin-left: 20px;
 }
 @media screen and (min-width: 768px) {
-  .quote-container .is-style-quote-of-the-day cite {
+  .is-style-quote-of-the-day cite {
     font-size: 1em;
     /* margin-left: 20px; */
   }
 }
-.quote-container .background-quote {
+
+.background-quote {
   position: absolute;
   height: 90%;
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  .quote-container .background-quote {
+  .background-quote {
     display: flex;
     align-self: center;
   }
 }
-.quote-container .background-quote img {
+.background-quote img {
   object-fit: contain;
   width: 100%;
   opacity: 0.25;
@@ -735,16 +736,16 @@ h3 {
 }
 
 .home-page-separator {
-  top: 180px;
+  top: 330px;
 }
 @media screen and (min-width: 768px) {
   .home-page-separator {
-    top: 465px;
+    top: 965px;
   }
 }
 @media screen and (min-width: 1024px) {
   .home-page-separator {
-    top: 525px;
+    top: 1144px;
   }
 }
 

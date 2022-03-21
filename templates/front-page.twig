@@ -1,80 +1,88 @@
 {% extends "base.twig" %}
 
 {% block content %}
-{{post.content}}
 
-{# <pre>
-	{{ dump(post.content) }}
-</pre> #}
-	<div class="wp-block-columns">
-		{# block with 2 blocks of text and an image #}
-		<div class="wp-block-column">
-			<div class="block__1">
-				<div class="block__1__content">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis distinctio similique quis fugit maiores architecto mollitia illum soluta laborum? Eos doloribus mollitia asperiores voluptatum molestiae laboriosam? Hic, nulla! Maxime, doloremque? soluta laborum? Eos doloribus mollitia asperiores voluptatum molestiae laboriosam? Hic, nulla! Maxime, doloremque?</p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis distinctio similique quis fugit maiores architecto mollitia illum soluta laborum? Eos doloribus mollitia asperiores voluptatum molestiae laboriosam? Hic, nulla! Maxime, doloremque?</p>
-				</div>
-				{# {% if thumbnail %} #}
-				<figure class="block__1__thumbnail">
-					<img src="" alt="">
-				</figure>
-				{# {% endif %} #}
-			</div>
-		</div>
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
 
-		{# block with 2 blocks of text and aa button #}
-		<div class="wp-block-column">
-			<div class="block__2">
-				<div class="block__2__content">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis distinctio similique quis fugit maiores architecto mollitia illum soluta laborum? Eos doloribus mollitia asperiores voluptatum molestiae laboriosam? Hic, nulla! Maxime, doloremque?</p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis distinctio similique quis fugit maiores architecto mollitia illum soluta laborum? Eos doloribus mollitia asperiores voluptatum molestiae laboriosam? Hic, nulla! Maxime, doloremque?</p>
-				</div>
-				<div class="wp-block-buttons">
-					<div class="is-style-as-link-button">
-						<a class="wp-block-button__link" href="http://">Jolie Btn ici</a>
-					</div>
-				</div>
-			</div>
-		</div>
+				{# !  attention travail pour le moment que pour la page d'accueil... #}
+				{# <h1 class="article-h1">{{post.title}}</h1> #}
+				{# ** le titre devra apparaître pour les autres pages #}
+
+					<div
+					class="article-body"> {# !  attention travail pour le moment que pour la page d'accueil... #}
+
+					<div>{{post.content}}</div>
+
+						{% if post.custom.fields.personnalised_quote %}
+							<div class="quote-container container-block">
+								<div class="is-style-quote-of-the-day">
+									<p>{{post.custom.fields.personnalised_quote}}</p>
+									<cite>{{post.custom.fields.author}}</cite>
+								</div>
+
+								{% if post.custom.fields.quote_background %}
+									<div class="background-quote">
+										<img src="{{post.custom.fields.quote_background.guid}}" alt="{{post.custom.fields.quote_background._wp_attachment_image_alt}}">
+									</div>
+								{% endif %}
+							</div>
+						{% endif %}
+						{# end the personnalised_quote #}
 
 
-		{# block with a title, 1 small block of text and a button #}
-		<div class="wp-block-column">
-			<div class="block__3">
-				<div class="block__3__content">
-					<h3>Titre</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis distinctio similique quis fugit maiores architecto mollitia illum soluta laborum?</p>
-				</div>
-				<div class="wp-block-buttons">
-					<div class="is-style-as-link-button">
-						<a class="wp-block-button__link" href="http://">Jolie Btn ici</a>
-					</div>
-				</div>
-			</div>
-		</div>
+						{% if post.custom.fields.separator_flash_info %}
+							<div class="is-style-personnalised-separator home-page-separator">
+								<h2>{{post.custom.fields.separator_flash_info}}</h2>
+							</div>
 
+							<div class="container-block">
 
-		{# block with a title, 1 small block of text and a button and again a title and small block of text #}
-		<div class="wp-block-column">
-			<div class="block__4">
-				<div class="block__4__content">
-					<h3>Titre un peu plus grand pour voir</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis distinctio similique quis fugit maiores architecto mollitia illum soluta laborum?</p>
-				</div>
-				<div class="wp-block-buttons">
-					<div class="is-style-as-link-button">
-						<a class="wp-block-button__link" href="http://">Jolie Btn ici</a>
-					</div>
-				</div>
-				<div class="block__content">
-					<h3>Titre</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis distinctio similique quis fugit maiores architecto mollitia illum soluta laborum?</p>
-				</div>
-			</div>
-		</div>
+								<div>
+									<h3>{{post.custom.fields.information_1}}</h3>
+									<p>{{post.custom.fields.sous-info_1}}</p>
+								</div>
 
-	</div>
-	{# end of the block-columns #}
+								{# 	{% if post.custom.fields.btn-link %}#}
+								<div class="wp-block-buttons">
+									<div class="is-style-as-link-button">
+										<a class="wp-block-button__link" href="">{{post.custom.fields.call-to-action-btn_1}}</a>
+									</div>
+								</div>
+								{# {% endif %} #}
+
+								{# {% if post.custom.fields.information_2 %}
+								
+															<div>
+																<h3>{{post.custom.fields.information_2}}</h3>
+																<p>{{post.custom.fields.sous-info_2}}</p>
+															</div>
+								
+															{% endif %}
+								
+															{% if post.custom.fields.btn-link_2 %}
+																<div>
+																	<button class="is-style-as-link-button">
+																		<a class="wp-block-button__link" href="{{btn-link_2}}">{{post.custom.fields.call-to-action-btn_2}}</a>
+																	</button>
+																</div>
+															{% endif %} #}
+							</div> {# end of the div container-block #}
+
+						{% endif %}{# end the separator flash-info #}
+{# 
+					<pre>
+					{{ dump(post.custom.fields.call-to-action-btn_1) }}
+					</pre> #}
+
+					{# {% if post.custom.fields.flash_info %}
+																																															 #}
+				</div>
+			</div> {# end of div article-body #}
+		</section>
+	</article>
+</div>
 
 
 {% endblock %}
