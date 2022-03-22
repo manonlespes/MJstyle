@@ -4,8 +4,8 @@
     flex-direction: column;
     height: 100%;
     margin-bottom: $spacer * 2;
-    
-    .background-slider{
+
+    .background-slider {
         background-color: $black;
         padding: $spacer;
     }
@@ -34,9 +34,39 @@
     }
 }
 
+/* container of my flash-info */
+
+.container-block-content {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    @include breakpoint($medium) {
+        width: 60%;
+    }
+
+    @include breakpoint($large) {
+    }
+
+    & + div{
+        margin-top: $spacer*2;
+
+      /*   h3{
+            margin-top: $spacer*2;
+        } */
+    }
+
+    h3, p {
+        text-align: center;
+        margin: 0;
+    }
+
+   
+}
+
 /* ce qu'il y a en dessous devra peut-être être supprimé */
 
-.article-content {
+/* .article-content {
     display: flex;
     flex-direction: column;
 
@@ -44,14 +74,14 @@
     }
 
     .wp-block-columns {
-        /* @include grid(); */
+      
         display: flex;
         flex-direction: column;
         grid-gap: $spacer;
 
         .wp-block-column {
             flex: 2;
-            /*    border: 1px solid $black; */
+         
             width: 100%;
 
             @include breakpoint($medium) {
@@ -59,7 +89,7 @@
                 padding-left: $spacer * 4;
             }
 
-            /*  {# block with 2 blocks of text and an image #} */
+          
             .block__1 {
                 @include breakpoint($medium) {
                     display: flex;
@@ -137,3 +167,4 @@
         }
     }
 }
+ */

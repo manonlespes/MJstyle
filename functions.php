@@ -269,10 +269,6 @@ class StarterSite extends Timber\Site {
 
 
 
-
-
-
-
 }
 
 
@@ -311,7 +307,4 @@ function my_acf_block_render_callback( $block, $content = '', $is_preview = fals
 	// Render the block.
 	Timber::render( 'block/example-block.twig', $context );
 }
-
-
-
 new StarterSite();

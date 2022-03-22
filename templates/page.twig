@@ -38,44 +38,46 @@
 								<h2>{{post.custom.fields.separator_flash_info}}</h2>
 							</div>
 
-							<div class="container-block">
+							<div class="container-block container-block-content ">
 
 								<div>
 									<h3>{{post.custom.fields.information_1}}</h3>
-									<p>{{post.custom.fields.sous-info_1}}</p>
+									<p>{{post.custom.fields.sous_info_1}}</p>
 								</div>
 
-								{# 	{% if post.custom.fields.btn-link %}#}
+								{% if post.custom.fields.btn_link %}
 								<div class="wp-block-buttons">
 									<div class="is-style-as-link-button">
-										<a class="wp-block-button__link" href="">{{post.custom.fields.call-to-action-btn_1}}</a>
+										<a class="wp-block-button__link" href="{{btn_link_1}}">{{post.custom.fields.call_to_action_btn}}</a>
 									</div>
 								</div>
-								{# {% endif %} #}
+								{% endif %}
 
-								{# {% if post.custom.fields.information_2 %}
+								 {% if post.custom.fields.information_2 %}
 								
-															<div>
-																<h3>{{post.custom.fields.information_2}}</h3>
-																<p>{{post.custom.fields.sous-info_2}}</p>
-															</div>
-								
-															{% endif %}
-								
-															{% if post.custom.fields.btn-link_2 %}
-																<div>
-																	<button class="is-style-as-link-button">
-																		<a class="wp-block-button__link" href="{{btn-link_2}}">{{post.custom.fields.call-to-action-btn_2}}</a>
-																	</button>
-																</div>
-															{% endif %} #}
+									<div>
+										<h3>{{post.custom.fields.information_2}}</h3>
+										<p>{{post.custom.fields.sous_info_2}}</p>
+									</div>
+		
+								{% endif %}
+	
+								{% if post.custom.fields.btn_link_2 %}
+									<div>
+										<button class="is-style-as-link-button">
+											<a class="wp-block-button__link" href="{{btn_link_2}}">{{post.custom.fields.call_to_action_btn_2}}</a>
+										</button>
+									</div>
+								{% endif %} 
+
+	
 							</div> {# end of the div container-block #}
 
 						{% endif %}{# end the separator flash-info #}
-{# 
+
 					<pre>
-					{{ dump(post.custom.fields.call-to-action-btn_1) }}
-					</pre> #}
+					{{ dump(post.custom.fields) }}
+					</pre> 
 
 					{# {% if post.custom.fields.flash_info %}
 																																															 #}
