@@ -50,6 +50,13 @@
     @include hn();
     font-size: 1.2rem;
     line-height: $spacer * 2;
+
+    @include breakpoint($medium){
+        font-size: 1.4rem;
+    }
+    @include breakpoint($large){
+        font-size: 1.7rem;
+    }
 }
 
 // ----

@@ -17,6 +17,11 @@
         padding: $spacer *2;
         width: max-content;
 
+        @include breakpoint($large){
+            padding: $spacer * 2.5;
+            border-radius: $spacer*2;
+        }
+
         .wp-block-button__link {
             color: $white;
             text-align: center;
@@ -34,6 +39,12 @@
         &:hover .wp-block-button__link {
             color: $black;
             cursor: pointer;
+        }
+
+        a{
+            @include breakpoint($large){
+                font-size: 1.7em;
+            }
         }
     }
 }

@@ -41,8 +41,11 @@
     align-items: center;
     margin: auto;
 
-    @include breakpoint($medium) {
-        width: 60%;
+
+    .simple-div{
+        @include breakpoint($medium) {
+        width: 50%;
+        }
     }
 
     @include breakpoint($large) {
@@ -59,8 +62,26 @@
     h3, p {
         text-align: center;
         margin: 0;
+
+        @include breakpoint($medium){
+            margin: 30px;
+        }
     }
 
+    p{
+        @include breakpoint($medium){
+            font-size: 1.1em;
+        }
+    }
+
+    h3{
+        &::before, &::after {
+            content: " - ";
+            font-size: 1.5em;
+            color: $red;
+            font-family: $fontText;
+        }
+    }
    
 }
 

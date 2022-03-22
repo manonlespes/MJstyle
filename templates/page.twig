@@ -40,7 +40,7 @@
 
 							<div class="container-block container-block-content ">
 
-								<div>
+								<div class="simple-div">
 									<h3>{{post.custom.fields.information_1}}</h3>
 									<p>{{post.custom.fields.sous_info_1}}</p>
 								</div>
@@ -55,7 +55,7 @@
 
 								 {% if post.custom.fields.information_2 %}
 								
-									<div>
+									<div class="simple-div">
 										<h3>{{post.custom.fields.information_2}}</h3>
 										<p>{{post.custom.fields.sous_info_2}}</p>
 									</div>
@@ -75,9 +75,9 @@
 
 						{% endif %}{# end the separator flash-info #}
 
-					<pre>
+					{# <pre>
 					{{ dump(post.custom.fields) }}
-					</pre> 
+					</pre>  #}
 
 					{# {% if post.custom.fields.flash_info %}
 																																															 #}
