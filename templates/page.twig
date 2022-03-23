@@ -16,29 +16,31 @@
 
 					<div class="background-slider">{{post.content}}</div>
 
-						{% if post.custom.fields.personnalised_quote %}
-							<div class="quote-container container-block">
-								<div class="is-style-quote-of-the-day">
-									<p>{{post.custom.fields.personnalised_quote}}</p>
-									<cite>{{post.custom.fields.author}}</cite>
+					{% if post.custom.fields.personnalised_quote %}
+						<div class="quote-container container-block">
+							<div class="is-style-quote-of-the-day">
+								<p>{{post.custom.fields.personnalised_quote}}</p>
+								<cite>{{post.custom.fields.author}}</cite>
+							</div>
+
+							{% if post.custom.fields.quote_background %}
+								<div class="background-quote">
+									<img src="{{post.custom.fields.quote_background.guid}}" alt="{{post.custom.fields.quote_background._wp_attachment_image_alt}}">
 								</div>
-
-								{% if post.custom.fields.quote_background %}
-									<div class="background-quote">
-										<img src="{{post.custom.fields.quote_background.guid}}" alt="{{post.custom.fields.quote_background._wp_attachment_image_alt}}">
-									</div>
-								{% endif %}
-							</div>
-						{% endif %}
-						{# end the personnalised_quote #}
+							{% endif %}
+						</div>
+					{% endif %}
+					{# end the personnalised_quote #}
 
 
-						{% if post.custom.fields.separator_flash_info %}
-							<div class="is-style-personnalised-separator home-page-separator">
-								<h2>{{post.custom.fields.separator_flash_info}}</h2>
-							</div>
+					{% if post.custom.fields.separator_flash_info %}
+						<div class="is-style-personnalised-separator home-page-separator">
+							<h2>{{post.custom.fields.separator_flash_info}}</h2>
+						</div>
 
-							<div class="container-block container-block-content ">
+						<div class="container-block">
+							<div class="container-block-content">
+
 
 								<div class="simple-div">
 									<h3>{{post.custom.fields.information_1}}</h3>
@@ -46,43 +48,76 @@
 								</div>
 
 								{% if post.custom.fields.btn_link %}
-								<div class="wp-block-buttons">
-									<div class="is-style-as-link-button">
-										<a class="wp-block-button__link" href="{{btn_link_1}}">{{post.custom.fields.call_to_action_btn}}</a>
+									<div class="wp-block-buttons">
+										<div class="is-style-as-link-button">
+											<a class="wp-block-button__link" href="{{btn_link_1}}">{{post.custom.fields.call_to_action_btn}}</a>
+										</div>
 									</div>
-								</div>
 								{% endif %}
 
-								 {% if post.custom.fields.information_2 %}
-								
+								{% if post.custom.fields.information_2 %}
+
 									<div class="simple-div">
 										<h3>{{post.custom.fields.information_2}}</h3>
 										<p>{{post.custom.fields.sous_info_2}}</p>
 									</div>
-		
+
 								{% endif %}
-	
+
 								{% if post.custom.fields.btn_link_2 %}
 									<div>
 										<button class="is-style-as-link-button">
 											<a class="wp-block-button__link" href="{{btn_link_2}}">{{post.custom.fields.call_to_action_btn_2}}</a>
 										</button>
 									</div>
-								{% endif %} 
+								{% endif %}
 
-	
-							</div> {# end of the div container-block #}
+							</div>
+						</div>
+						{# end of the div container-block #}
 
-						{% endif %}{# end the separator flash-info #}
+					{% endif %}
+					{# end the separator flash-info #}
 
-					{# <pre>
-					{{ dump(post.custom.fields) }}
-					</pre>  #}
+					{% if post.custom.fields.styled_separator %}
+						<div class="is-style-personnalised-separator separator-1">
+							<h2>{{post.custom.fields.styled_separator}}</h2>
+						</div>
+
+
+						<div class="container-block">
+							<div class="container-content-presentation">
+								<div class="txt-btn-txt">
+									<div>{{post.custom.fields.text_1}}</div>
+
+									<div class="wp-block-buttons">
+										<div class="is-style-as-link-button">
+											<a class="wp-block-button__link" href="{{btn_link_presentation}}">{{post.custom.fields.call_to_action_btn_presentation}}</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="img-presentation">
+									<img src="{{post.custom.fields.pictures_presentation.guid}}" alt="{{post.custom.fields.pictures_presentation._wp_attachment_image_alt}}">
+
+								</div>
+							</div>
+						</div>{# end of the container block #}
+
+
+					{% endif %}
+					{# end of the styled-separator #01 #}
+
+{# 
+				<pre>
+						{{ dump(post.custom.fields) }}
+													</pre>   #}
 
 					{# {% if post.custom.fields.flash_info %}
-																																															 #}
+																																																																								 #}
 				</div>
-			</div> {# end of div article-body #}
+			</div>
+			{# end of div article-body #}
 		</section>
 	</article>
 </div>

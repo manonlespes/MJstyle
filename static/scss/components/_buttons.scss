@@ -1,7 +1,12 @@
 .wp-block-buttons {
     * + & {
-        margin-top: $spacer * 2;
-        margin-bottom: $spacer * 2;
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+
+        @include breakpoint($medium) {
+            margin-top: $spacer * 2;
+            margin-bottom: $spacer * 2;
+        }
     }
 
     .is-style-as-link-button {
@@ -9,17 +14,17 @@
         height: 35px;
         background-color: $black;
         border: 1px solid $black;
-        border-radius: $spacer*2;
+        border-radius: $spacer * 2;
         box-shadow: 5px 3px 5px 1px rgba(0, 0, 0, 0.2);
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: $spacer *2;
+        padding: $spacer * 2;
         width: max-content;
 
-        @include breakpoint($large){
+        @include breakpoint($large) {
             padding: $spacer * 2.5;
-            border-radius: $spacer*2;
+            border-radius: $spacer * 2;
         }
 
         .wp-block-button__link {
@@ -41,8 +46,8 @@
             cursor: pointer;
         }
 
-        a{
-            @include breakpoint($large){
+        a {
+            @include breakpoint($large) {
                 font-size: 1.7em;
             }
         }

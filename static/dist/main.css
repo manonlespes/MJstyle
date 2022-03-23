@@ -378,12 +378,13 @@ header .wrapper .btn-menu-responsive {
 .article-body .container-block {
   margin: auto;
   width: 100%;
-  height: 200px;
-  max-height: 200px;
+  height: 250px;
+  max-height: 250px;
   border: 1px solid #1A1718;
   border-top-style: hidden;
   border-left-style: hidden;
   border-right-style: hidden;
+  /* container of my flash-info */
 }
 @media screen and (min-width: 768px) {
   .article-body .container-block {
@@ -398,43 +399,109 @@ header .wrapper .btn-menu-responsive {
     max-height: 565px;
   }
 }
-
-/* container of my flash-info */
-.container-block-content {
-  justify-content: center;
+.article-body .container-block .container-block-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   margin: auto;
 }
 @media screen and (min-width: 768px) {
-  .container-block-content .simple-div {
-    width: 50%;
+  .article-body .container-block .container-block-content .simple-div {
+    margin: none;
   }
 }
-.container-block-content + div {
+.article-body .container-block .container-block-content + div, .article-body .container-block .container-block .container-block-content + div {
   margin-top: 20px;
   /*   h3{
-        margin-top: $spacer*2;
-    } */
+      margin-top: $spacer*2;
+  } */
 }
-.container-block-content h3, .container-block-content p {
+.article-body .container-block .container-block-content h3,
+.article-body .container-block .container-block-content p {
   text-align: center;
   margin: 0;
 }
 @media screen and (min-width: 768px) {
-  .container-block-content h3, .container-block-content p {
+  .article-body .container-block .container-block-content h3,
+.article-body .container-block .container-block-content p {
     margin: 30px;
   }
 }
 @media screen and (min-width: 768px) {
-  .container-block-content p {
+  .article-body .container-block .container-block-content p {
     font-size: 1.1em;
   }
 }
-.container-block-content h3::before, .container-block-content h3::after {
+.article-body .container-block .container-block-content h3::before, .article-body .container-block .container-block-content h3::after {
   content: " - ";
   font-size: 1.5em;
   color: #C62A40;
   font-family: "ABeeZee";
+}
+.article-body .container-block .container-content-presentation {
+  display: flex;
+  width: 90%;
+  justify-content: space-evenly;
+  margin: auto;
+}
+@media screen and (min-width: 768px) {
+  .article-body .container-block .container-content-presentation {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+.article-body .container-block .container-content-presentation .txt-btn-txt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  max-height: max-content;
+  height: 100%;
+  text-align: left;
+  font-size: 0.8em;
+  width: 50%;
+}
+@media screen and (min-width: 768px) {
+  .article-body .container-block .container-content-presentation .txt-btn-txt {
+    width: 40%;
+    text-align: center;
+    font-size: 1.2em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .article-body .container-block .container-content-presentation .txt-btn-txt div {
+    line-height: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .article-body .container-block .container-content-presentation .txt-btn-txt div {
+    width: 80%;
+    line-height: 35px;
+  }
+}
+.article-body .container-block .container-content-presentation .img-presentation {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+@media screen and (min-width: 1024px) {
+  .article-body .container-block .container-content-presentation .img-presentation {
+    width: 50%;
+  }
+}
+.article-body .container-block .container-content-presentation .img-presentation img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+@media screen and (min-width: 1024px) {
+  .article-body .container-block .container-content-presentation .img-presentation img {
+    width: 60%;
+  }
 }
 
 /* ce qu'il y a en dessous devra peut-être être supprimé */
@@ -697,7 +764,7 @@ h3 {
   font-family: "Prisma";
   /*    font-weight: 600; */
   font-style: normal;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 20px;
 }
 @media screen and (min-width: 768px) {
@@ -712,8 +779,14 @@ h3 {
 }
 
 * + .wp-block-buttons {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  * + .wp-block-buttons {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 .wp-block-buttons .is-style-as-link-button {
   transition: all 0.3s ease-in-out;
@@ -756,7 +829,7 @@ h3 {
   }
 }
 
-.is-style-personnalised-separator, .home-page-separator {
+.is-style-personnalised-separator, .separator-1, .home-page-separator {
   height: 40px;
   width: 160px;
   max-width: 160px;
@@ -772,7 +845,7 @@ h3 {
   padding: 20px;
 }
 @media screen and (min-width: 768px) {
-  .is-style-personnalised-separator, .home-page-separator {
+  .is-style-personnalised-separator, .separator-1, .home-page-separator {
     height: 65px;
     width: 330px;
     max-width: 330px;
@@ -781,7 +854,7 @@ h3 {
   }
 }
 @media screen and (min-width: 1024px) {
-  .is-style-personnalised-separator, .home-page-separator {
+  .is-style-personnalised-separator, .separator-1, .home-page-separator {
     height: 85px;
     width: 537px;
     max-width: 537px;
@@ -789,7 +862,7 @@ h3 {
     border-bottom-left-radius: 25px;
   }
 }
-.is-style-personnalised-separator h2, .home-page-separator h2 {
+.is-style-personnalised-separator h2, .separator-1 h2, .home-page-separator h2 {
   font-family: "Prisma";
   /*    font-weight: 600; */
   font-style: normal;
@@ -799,23 +872,23 @@ h3 {
   letter-spacing: 1px;
 }
 @media screen and (min-width: 768px) {
-  .is-style-personnalised-separator h2, .home-page-separator h2 {
+  .is-style-personnalised-separator h2, .separator-1 h2, .home-page-separator h2 {
     font-size: 1.5rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .is-style-personnalised-separator h2, .home-page-separator h2 {
+  .is-style-personnalised-separator h2, .separator-1 h2, .home-page-separator h2 {
     font-size: 1.8rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .is-style-personnalised-separator h2, .home-page-separator h2 {
+  .is-style-personnalised-separator h2, .separator-1 h2, .home-page-separator h2 {
     letter-spacing: 5px;
   }
 }
 
 .home-page-separator {
-  top: 413px;
+  top: 449px;
 }
 @media screen and (min-width: 768px) {
   .home-page-separator {
@@ -825,6 +898,20 @@ h3 {
 @media screen and (min-width: 1024px) {
   .home-page-separator {
     top: 1144px;
+  }
+}
+
+.separator-1 {
+  top: 699px;
+}
+@media screen and (min-width: 768px) {
+  .separator-1 {
+    top: 1455px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .separator-1 {
+    top: 1705px;
   }
 }
 
