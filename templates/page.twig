@@ -1,124 +1,59 @@
+{% set title_block = post.custom.flash_info %}
+
+
+{% set quote = post.custom.fields.personnalised_quote %}
+{% set image_quote = post.custom.fields.quote_background.guid%}
+{% set author = post.custom.fields.author %}
+{% set image_quote_title = post.custom.fields.quote_background._wp_attachment_image_alt %}
+
+{% set titre = post.custom.fields.titre %}
+{% set text1 = post.custom.fields.text_1 %}
+{% set text2 = post.custom.fields.text_2 %}
+{% set image = post.custom.fields.pictures_presentation.guid %}
+{% set image_title = post.custom.fields.pictures_presentation._wp_attachment_image_alt %}
+{% set link = post.custom.fields.btn_link_presentation %}
+{% set text_link = post.custom.fields.call_to_action_btn_presentation %}
+
+
 {% extends "base.twig" %}
 
 {# 	je suis dans la page.twig #}
 
 {% block content %}
-	<div class="content-wrapper">
-		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="article-content">
 
-				{# !  attention travail pour le moment que pour la page d'accueil... #}
-				{# <h1 class="article-h1">{{post.title}}</h1> #}
-				{# ** le titre devra apparaître pour les autres pages #}
-
-					<div
-					class="article-body"> {# !  attention travail pour le moment que pour la page d'accueil... #}
-
-					<div class="background-slider">{{post.content}}</div>
-
-					{% if post.custom.fields.personnalised_quote %}
-						<div class="quote-container container-block">
-							<div class="is-style-quote-of-the-day">
-								<p>{{post.custom.fields.personnalised_quote}}</p>
-								<cite>{{post.custom.fields.author}}</cite>
-							</div>
-
-							{% if post.custom.fields.quote_background %}
-								<div class="background-quote">
-									<img src="{{post.custom.fields.quote_background.guid}}" alt="{{post.custom.fields.quote_background._wp_attachment_image_alt}}">
-								</div>
-							{% endif %}
-						</div>
-					{% endif %}
-					{# end the personnalised_quote #}
+	{# 	<pre>
+		{{ dump(post) }}
+	</pre> #}
 
 
-					{% if post.custom.fields.separator_flash_info %}
-						<div class="is-style-personnalised-separator home-page-separator">
-							<h2>{{post.custom.fields.separator_flash_info}}</h2>
-						</div>
+	<article class="container">
 
-						<div class="container-block">
-							<div class="container-block-content">
+		{% if quote %}
+			{% include "quote.twig"%}
+		{% endif %}
 
+		{% if titre %}
+			<div class="separator">{{titre}}</div>
 
-								<div class="simple-div">
-									<h3>{{post.custom.fields.information_1}}</h3>
-									<p>{{post.custom.fields.sous_info_1}}</p>
-								</div>
-
-								{% if post.custom.fields.btn_link %}
-									<div class="wp-block-buttons">
-										<div class="is-style-as-link-button">
-											<a class="wp-block-button__link" href="{{btn_link_1}}">{{post.custom.fields.call_to_action_btn}}</a>
-										</div>
-									</div>
-								{% endif %}
-
-								{% if post.custom.fields.information_2 %}
-
-									<div class="simple-div">
-										<h3>{{post.custom.fields.information_2}}</h3>
-										<p>{{post.custom.fields.sous_info_2}}</p>
-									</div>
-
-								{% endif %}
-
-								{% if post.custom.fields.btn_link_2 %}
-									<div>
-										<button class="is-style-as-link-button">
-											<a class="wp-block-button__link" href="{{btn_link_2}}">{{post.custom.fields.call_to_action_btn_2}}</a>
-										</button>
-									</div>
-								{% endif %}
-
-							</div>
-						</div>
-						{# end of the div container-block #}
-
-					{% endif %}
-					{# end the separator flash-info #}
-
-					{% if post.custom.fields.styled_separator %}
-						<div class="is-style-personnalised-separator separator-1">
-							<h2>{{post.custom.fields.styled_separator}}</h2>
-						</div>
-
-
-						<div class="container-block">
-							<div class="container-content-presentation">
-								<div class="txt-btn-txt">
-									<div>{{post.custom.fields.text_1}}</div>
-
-									<div class="wp-block-buttons">
-										<div class="is-style-as-link-button">
-											<a class="wp-block-button__link" href="{{btn_link_presentation}}">{{post.custom.fields.call_to_action_btn_presentation}}</a>
-										</div>
-									</div>
-								</div>
-
-								<div class="img-presentation">
-									<img src="{{post.custom.fields.pictures_presentation.guid}}" alt="{{post.custom.fields.pictures_presentation._wp_attachment_image_alt}}">
-
-								</div>
-							</div>
-						</div>{# end of the container block #}
-
-
-					{% endif %}
-					{# end of the styled-separator #01 #}
-
-{# 
-				<pre>
-						{{ dump(post.custom.fields) }}
-													</pre>   #}
-
-					{# {% if post.custom.fields.flash_info %}
-																																																																								 #}
+			<div class="container__content">
+				<div class="block block__presentation">
+					<p>{{text1}}</p>
+					<div class="wp-block-buttons">
+						<a href="{{link}}" target="_blank" rel="noopener noreferrer" class="is-style-as-link-button">{{text_link}}</a>
+					</div>
+					<p>{{text2}}</p>
 				</div>
+
+				<div>
+					<img src="{{image}}" alt="{{image_title}}">
+				</div>
+
 			</div>
-			{# end of div article-body #}
-		</section>
+
+		{% endif %}
+
+
 	</article>
-</div>
-<!-- /content-wrapper -->{% endblock %}
+
+
+{% endblock %}

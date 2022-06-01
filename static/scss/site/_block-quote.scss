@@ -1,9 +1,4 @@
-/* #post-81 {
-    @include breakpoint($medium) {
-        height: 600px;
-    } */
-
-.is-style-quote-of-the-day {
+.block_quote {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,12 +11,11 @@
     @include breakpoint($large) {
         width: 55%;
         margin: auto;
-        /* max-height: 350px; */
         margin-top: $spacer;
         margin-bottom: $spacer;
     }
 
-    p {
+    .quote {
         font-family: $fontTitle;
         text-align: center;
         margin-bottom: 20px;
@@ -65,7 +59,7 @@
         }
     }
 
-    cite {
+   .author {
         align-self: flex-start;
         text-transform: capitalize;
         font-size: 0.9em;
@@ -73,7 +67,6 @@
 
         @include breakpoint($medium) {
             font-size: 1em;
-            /* margin-left: 20px; */
         }
     }
 }

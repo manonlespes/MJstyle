@@ -8,48 +8,41 @@
             margin-bottom: $spacer * 2;
         }
     }
+}
 
-    .is-style-as-link-button {
-        @include transition();
-        height: 35px;
-        background-color: $black;
-        border: 1px solid $black;
+.is-style-as-link-button {
+    @include transition();
+    height: 35px;
+    background-color: $black;
+    border: 1px solid $black;
+    border-radius: $spacer * 2;
+    box-shadow: 5px 3px 5px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $spacer * 2;
+    width: max-content;
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $fontTitle;
+    letter-spacing: 0.1em;
+
+    @include breakpoint($large) {
+        padding: $spacer * 2.5;
         border-radius: $spacer * 2;
-        box-shadow: 5px 3px 5px 1px rgba(0, 0, 0, 0.2);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: $spacer * 2;
-        width: max-content;
+        font-size: 1.7em;
+    }
 
-        @include breakpoint($large) {
-            padding: $spacer * 2.5;
-            border-radius: $spacer * 2;
-        }
+    &:link,
+    &:visited {
+        color: $white;
+    }
 
-        .wp-block-button__link {
-            color: $white;
-            text-align: center;
-            text-transform: uppercase;
-            font-family: $fontTitle;
-            letter-spacing: 0.1em;
-        }
-
-        &:hover {
-            background-color: $white;
-            cursor: pointer;
-            box-shadow: 5px 3px 5px 1px rgba(0, 0, 0, 0.3);
-        }
-
-        &:hover .wp-block-button__link {
-            color: $black;
-            cursor: pointer;
-        }
-
-        a {
-            @include breakpoint($large) {
-                font-size: 1.7em;
-            }
-        }
+    &:hover {
+        background-color: $white;
+        cursor: pointer;
+        box-shadow: 5px 3px 5px 1px rgba(0, 0, 0, 0.3);
+        color: $red;
     }
 }

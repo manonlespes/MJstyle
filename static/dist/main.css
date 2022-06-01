@@ -364,254 +364,7 @@ header .wrapper .btn-menu-responsive {
   font-size: 0.8em;
 }
 
-.article-body, .article-body .container-block {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  margin-bottom: 20px;
-}
-.article-body .background-slider {
-  background-color: #1A1718;
-  padding: 10px;
-}
-.article-body .container-block {
-  margin: auto;
-  width: 100%;
-  height: 250px;
-  max-height: 250px;
-  border: 1px solid #1A1718;
-  border-top-style: hidden;
-  border-left-style: hidden;
-  border-right-style: hidden;
-  /* container of my flash-info */
-}
-@media screen and (min-width: 768px) {
-  .article-body .container-block {
-    height: 500px;
-    max-height: 500px;
-    justify-content: center;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .article-body .container-block {
-    height: 565px;
-    max-height: 565px;
-  }
-}
-.article-body .container-block .container-block-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: auto;
-}
-@media screen and (min-width: 768px) {
-  .article-body .container-block .container-block-content .simple-div {
-    margin: none;
-  }
-}
-.article-body .container-block .container-block-content + div, .article-body .container-block .container-block .container-block-content + div {
-  margin-top: 20px;
-  /*   h3{
-      margin-top: $spacer*2;
-  } */
-}
-.article-body .container-block .container-block-content h3,
-.article-body .container-block .container-block-content p {
-  text-align: center;
-  margin: 0;
-}
-@media screen and (min-width: 768px) {
-  .article-body .container-block .container-block-content h3,
-.article-body .container-block .container-block-content p {
-    margin: 30px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .article-body .container-block .container-block-content p {
-    font-size: 1.1em;
-  }
-}
-.article-body .container-block .container-block-content h3::before, .article-body .container-block .container-block-content h3::after {
-  content: " - ";
-  font-size: 1.5em;
-  color: #C62A40;
-  font-family: "ABeeZee";
-}
-.article-body .container-block .container-content-presentation {
-  display: flex;
-  width: 90%;
-  justify-content: space-evenly;
-  margin: auto;
-}
-@media screen and (min-width: 768px) {
-  .article-body .container-block .container-content-presentation {
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-}
-.article-body .container-block .container-content-presentation .txt-btn-txt {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  max-height: max-content;
-  height: 100%;
-  text-align: left;
-  font-size: 0.8em;
-  width: 50%;
-}
-@media screen and (min-width: 768px) {
-  .article-body .container-block .container-content-presentation .txt-btn-txt {
-    width: 40%;
-    text-align: center;
-    font-size: 1.2em;
-  }
-}
-@media screen and (min-width: 768px) {
-  .article-body .container-block .container-content-presentation .txt-btn-txt div {
-    line-height: 30px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .article-body .container-block .container-content-presentation .txt-btn-txt div {
-    width: 80%;
-    line-height: 35px;
-  }
-}
-.article-body .container-block .container-content-presentation .img-presentation {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-}
-@media screen and (min-width: 1024px) {
-  .article-body .container-block .container-content-presentation .img-presentation {
-    width: 50%;
-  }
-}
-.article-body .container-block .container-content-presentation .img-presentation img {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-@media screen and (min-width: 1024px) {
-  .article-body .container-block .container-content-presentation .img-presentation img {
-    width: 60%;
-  }
-}
-
-/* ce qu'il y a en dessous devra peut-être être supprimé */
-/* .article-content {
-    display: flex;
-    flex-direction: column;
-
-    @include breakpoint($medium) {
-    }
-
-    .wp-block-columns {
-
-        display: flex;
-        flex-direction: column;
-        grid-gap: $spacer;
-
-        .wp-block-column {
-            flex: 2;
-
-            width: 100%;
-
-            @include breakpoint($medium) {
-                padding-right: $spacer * 4;
-                padding-left: $spacer * 4;
-            }
-
-
-            .block__1 {
-                @include breakpoint($medium) {
-                    display: flex;
-                }
-
-                &__content {
-                    @include breakpoint($medium) {
-                        width: 50%;
-                    }
-                }
-
-                &__thumbnail {
-                    @include breakpoint($medium) {
-                        width: 50%;
-                    }
-                }
-            }
-
-            .block__2,
-            .block__3,
-            .block__4 {
-                @include breakpoint($large) {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                &__content {
-                    @include breakpoint($large) {
-                        width: 80%;
-                    }
-                }
-            }
-
-            .wp-block-buttons {
-                display: flex;
-                justify-content: center;
-            }
-
-            h3 {
-                display: flex;
-                justify-content: center;
-                text-align: center;
-
-                @include breakpoint($medium) {
-                    font-size: 1.5em;
-                }
-
-                &::before,
-                &::after {
-                    content: "-";
-                    color: $red;
-                    font-family: $fontText;
-                    font-size: 1.2em;
-
-                    @include breakpoint($medium) {
-                        font-size: 1.6em;
-                    }
-                }
-            }
-
-            p {
-                text-align: center;
-            }
-        }
-    }
-
-    .wp-container-1 {
-        .wp-block-column {
-            @include breakpoint($medium) {
-                padding-right: 0px;
-                padding-left: 0px;
-            }
-        }
-    }
-}
- */
-/* #post-81 {
-    @include breakpoint($medium) {
-        height: 600px;
-    } */
-.is-style-quote-of-the-day {
+.block_quote {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -622,15 +375,14 @@ header .wrapper .btn-menu-responsive {
   margin: auto;
 }
 @media screen and (min-width: 1024px) {
-  .is-style-quote-of-the-day {
+  .block_quote {
     width: 55%;
     margin: auto;
-    /* max-height: 350px; */
     margin-top: 10px;
     margin-bottom: 10px;
   }
 }
-.is-style-quote-of-the-day p {
+.block_quote .quote {
   font-family: "Prisma";
   text-align: center;
   margin-bottom: 20px;
@@ -638,54 +390,53 @@ header .wrapper .btn-menu-responsive {
   line-height: 30px;
 }
 @media screen and (min-width: 768px) {
-  .is-style-quote-of-the-day p {
+  .block_quote .quote {
     margin-bottom: 80px;
     font-size: 1.2em;
     line-height: 50px;
   }
 }
 @media screen and (min-width: 1024px) {
-  .is-style-quote-of-the-day p {
+  .block_quote .quote {
     font-size: 2em;
   }
 }
 @media screen and (min-width: 1024px) {
-  .is-style-quote-of-the-day p {
+  .block_quote .quote {
     line-height: 70px;
   }
 }
-.is-style-quote-of-the-day p::before {
+.block_quote .quote::before {
   content: '"  ';
   color: #C62A40;
   font-size: 2em;
   font-family: "ABeeZee";
 }
 @media screen and (min-width: 768px) {
-  .is-style-quote-of-the-day p::before {
+  .block_quote .quote::before {
     font-size: 2.5em;
   }
 }
-.is-style-quote-of-the-day p::after {
+.block_quote .quote::after {
   content: '  "';
   color: #C62A40;
   font-size: 2em;
   font-family: "ABeeZee";
 }
 @media screen and (min-width: 768px) {
-  .is-style-quote-of-the-day p::after {
+  .block_quote .quote::after {
     font-size: 2.5em;
   }
 }
-.is-style-quote-of-the-day cite {
+.block_quote .author {
   align-self: flex-start;
   text-transform: capitalize;
   font-size: 0.9em;
   margin-left: 20px;
 }
 @media screen and (min-width: 768px) {
-  .is-style-quote-of-the-day cite {
+  .block_quote .author {
     font-size: 1em;
-    /* margin-left: 20px; */
   }
 }
 
@@ -788,7 +539,8 @@ h3 {
     margin-bottom: 20px;
   }
 }
-.wp-block-buttons .is-style-as-link-button {
+
+.is-style-as-link-button {
   transition: all 0.3s ease-in-out;
   height: 35px;
   background-color: #1A1718;
@@ -800,33 +552,27 @@ h3 {
   align-items: center;
   padding: 20px;
   width: max-content;
-}
-@media screen and (min-width: 1024px) {
-  .wp-block-buttons .is-style-as-link-button {
-    padding: 25px;
-    border-radius: 20px;
-  }
-}
-.wp-block-buttons .is-style-as-link-button .wp-block-button__link {
   color: #f1f5f8;
   text-align: center;
   text-transform: uppercase;
   font-family: "Prisma";
   letter-spacing: 0.1em;
 }
-.wp-block-buttons .is-style-as-link-button:hover {
+@media screen and (min-width: 1024px) {
+  .is-style-as-link-button {
+    padding: 25px;
+    border-radius: 20px;
+    font-size: 1.7em;
+  }
+}
+.is-style-as-link-button:link, .is-style-as-link-button:visited {
+  color: #f1f5f8;
+}
+.is-style-as-link-button:hover {
   background-color: #f1f5f8;
   cursor: pointer;
   box-shadow: 5px 3px 5px 1px rgba(0, 0, 0, 0.3);
-}
-.wp-block-buttons .is-style-as-link-button:hover .wp-block-button__link {
-  color: #1A1718;
-  cursor: pointer;
-}
-@media screen and (min-width: 1024px) {
-  .wp-block-buttons .is-style-as-link-button a {
-    font-size: 1.7em;
-  }
+  color: #C62A40;
 }
 
 .is-style-personnalised-separator, .separator-1, .home-page-separator {
