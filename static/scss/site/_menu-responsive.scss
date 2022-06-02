@@ -1,0 +1,11 @@
+.btn-menu-responsive {
+       
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    padding: 10px 40px;
+
+    @include breakpoint($medium) {
+        display: none;
+    }
+}

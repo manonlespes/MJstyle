@@ -84,13 +84,13 @@ class StarterSite extends Timber\Site {
 		/* var_dump(get_stylesheet_directory_uri().'/static/dist/main.css'); */
 		wp_dequeue_style('wp-block-library'); /* delete the defaut style of Gutenberg plugin */
 		wp_enqueue_style('project', get_stylesheet_directory_uri().'/static/dist/main.css');
-
+		wp_enqueue_script('loadscript', get_template_directory_uri().'/static/js/nav.js');
 	}
 
-	public function topcat_lite_scripts(){
-		/* addition of the social media icons to my theme */
+		/* public function topcat_lite_scripts(){
+	addition of the social media icons to my theme 
 		wp_enqueue_style( 'topcat-lite-fontawesome', get_template_directory_uri() . '/static/scss/fontawesome/font-awesome.scss' );
-	}
+	}*/
 
 	/* addition of custom style in Gutenberg blocks/components */
 	public function register_block_styles (){

@@ -14,7 +14,9 @@
 			<nav id="nav-main" class="nav-main" role="navigation">
 				{% include "menu.twig" with {'items': menu.get_items} %}
 			</nav>
-			<div class="btn-menu-responsive">menu</div>
+			<div id="menuMobile" class="btn-menu-responsive">
+				<h3>menu</h3>
+			</div>
 			<!-- #nav -->
 			<div class="logo_title">
 				<a href="{{site.url}}" rel="home">
@@ -28,23 +30,23 @@
 <section id="content" role="main" class="content-wrapper">
 	<div class="wrapper">
 		{% block content %}
-	{% include "page.twig" %}
+			{% include "page.twig" %}
 		{% endblock %}
 	</div>
 
 	{# {% if title %}
-		<h2>{{title}}</h2>
-	{% endif %}
-	<div class="wrapper {{sidebar_class}}">
-		{% block content %}
-			Sorry, no content
-		{% endblock %}
-	</div> #}
+			<h2>{{title}}</h2>
+		{% endif %}
+		<div class="wrapper {{sidebar_class}}">
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
+		</div> #}
 	{# {% if sidebar %}
-			<aside class="layout-sidebar">
-				{{sidebar}}
-			</aside>
-		{% endif %} #}
+				<aside class="layout-sidebar">
+					{{sidebar}}
+				</aside>
+			{% endif %} #}
 </section>
 
 {% block footer %}
