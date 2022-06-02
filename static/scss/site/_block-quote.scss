@@ -1,93 +1,97 @@
-.block_quote {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 100%;
-    width: 80%;
-    margin: auto;
+.container__quote {
+   margin: $spacer *2;
+   position: relative;
 
-    @include breakpoint($large) {
-        width: 55%;
-        margin: auto;
-        margin-top: $spacer;
-        margin-bottom: $spacer;
-    }
+    .block {
+        &__quote {
+            &-content {
 
-    .quote {
-        font-family: $fontTitle;
-        text-align: center;
-        margin-bottom: 20px;
-        font-size: 0.9em;
-        line-height: $spacer * 3;
+                @include breakpoint($medium){
+                    padding: 50px 100px;
+                }
 
-        @include breakpoint($medium) {
-            margin-bottom: 80px;
-            font-size: 1.2em;
-            line-height: $spacer * 5;
-        }
+                @include breakpoint($large){
+                    padding: 50px 200px;
+                }
 
-        @include breakpoint($large) {
-            font-size: 2em;
-        }
+                @include breakpoint($xlarge){
+                    padding: 50px 350px;
+                }
 
-        @include breakpoint($large) {
-            line-height: $spacer * 7;
-        }
+                .quote {
+                    font-family: $fontTitle;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    font-size: 0.9em;
+                    line-height: $spacer * 3;
 
-        &::before {
-            content: '"  ';
-            color: $red;
-            font-size: 2em;
-            font-family: $fontText;
+                    @include breakpoint($medium) {
+                        margin-bottom: 80px;
+                        font-size: 1.2em;
+                        line-height: $spacer * 5;
+                    }
 
-            @include breakpoint($medium) {
-                font-size: 2.5em;
+                    @include breakpoint($large) {
+                        font-size: 2em;
+                    }
+
+                    @include breakpoint($large) {
+                        line-height: $spacer * 7;
+                    }
+
+                    &::before {
+                        content: '"  ';
+                        color: $red;
+                        font-size: 2em;
+                        font-family: $fontText;
+
+                        @include breakpoint($medium) {
+                            font-size: 2.5em;
+                        }
+                    }
+
+                    &::after {
+                        content: '  "';
+                        color: $red;
+                        font-size: 2em;
+                        font-family: $fontText;
+
+                        @include breakpoint($medium) {
+                            font-size: 2.5em;
+                        }
+                    }
+                }
+
+                .author {
+                    align-self: flex-start;
+                    text-transform: capitalize;
+                    font-size: 0.9em;
+                    margin-left: $spacer *2;
+                    width: fit-content;
+
+                    @include breakpoint($medium) {
+                        font-size: 1em;
+                    }
+                }
             }
-        }
 
-        &::after {
-            content: '  "';
-            color: $red;
-            font-size: 2em;
-            font-family: $fontText;
+            /* &-background {
+                position: absolute;
+                top: 0;
+                margin: -20px;
+                z-index: -1;
 
-            @include breakpoint($medium) {
-                font-size: 2.5em;
-            }
-        }
-    }
+                @include breakpoint($medium) {
+                    display: flex;
+                    align-self: center;
+                }
 
-   .author {
-        align-self: flex-start;
-        text-transform: capitalize;
-        font-size: 0.9em;
-        margin-left: 20px;
-
-        @include breakpoint($medium) {
-            font-size: 1em;
-        }
-    }
-}
-
-.background-quote {
-    position: absolute;
-    height: 90%;
-    width: 100%;
-
-    @include breakpoint($medium) {
-        display: flex;
-        align-self: center;
-    }
-
-    img {
-        object-fit: contain;
-        width: 100%;
-        opacity: 0.25;
-        z-index: -6;
-
-        @include breakpoint($medium) {
+                img {
+                    object-fit: contain;
+                    width: 100%;
+                    opacity: 0.25;
+                }
+            } */
         }
     }
 }
