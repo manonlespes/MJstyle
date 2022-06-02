@@ -1,4 +1,4 @@
-.is-style-personnalised-separator {
+/* .is-style-personnalised-separator {
     height: 40px;
     width: 160px;
     max-width: 160px;
@@ -64,5 +64,48 @@
 
     @include breakpoint($large){
         top: 1705px;
+    }
+}
+ */
+
+.separator__block {
+    position: relative;
+    &-line {
+        &:before{
+            content: "";
+            position: absolute;
+            border-top: .2em solid $black;
+            width:100%;
+            top: 50%;
+            z-index: -1;
+
+        }
+    }
+
+    &-title {
+        display: flex;
+        justify-content: end;
+        margin-left: auto;
+        background-color: $black;
+        width: max-content;
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 30px;
+
+        @include breakpoint($medium){
+            border-bottom-left-radius: 25px;
+            border-top-left-radius: 25px;
+        }
+
+    }
+
+    .title {
+        color: $white;
+        padding-left: $spacer *3;
+        padding-right: $spacer *7;
+        letter-spacing: 2px;
+
+        @include breakpoint($large){
+            padding-right: $spacer *12;
+        }
     }
 }

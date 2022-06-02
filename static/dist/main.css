@@ -638,89 +638,110 @@ h3 {
   color: #C62A40;
 }
 
-.is-style-personnalised-separator, .separator-1, .home-page-separator {
-  height: 40px;
-  width: 160px;
-  max-width: 160px;
-  background-color: #1A1718;
-  display: flex;
-  justify-content: start;
-  align-items: center;
+/* .is-style-personnalised-separator {
+    height: 40px;
+    width: 160px;
+    max-width: 160px;
+    background-color: $black;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    border: 1px solid $black;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: $spacer*2;
+
+    @include breakpoint($medium){
+        height: 65px;
+        width: 330px;
+        max-width: 330px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    @include breakpoint($large){
+        height: 85px;
+        width: 537px;
+        max-width: 537px;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
+
+    h2 {
+        @include h2();
+        color: $white;
+        letter-spacing: 1px;
+
+
+        @include breakpoint($large){
+            letter-spacing: 5px;
+        }
+    }
+}
+
+.home-page-separator{
+    @extend .is-style-personnalised-separator;
+    top: 449px;
+
+    @include breakpoint($medium){
+        top: 965px;
+    }
+
+    @include breakpoint($large){
+        top: 1144px;
+    }
+}
+
+.separator-1{
+    @extend .is-style-personnalised-separator;
+    top: 699px;
+
+    @include breakpoint($medium){
+        top: 1455px;
+    }
+
+    @include breakpoint($large){
+        top: 1705px;
+    }
+}
+ */
+.separator__block {
+  position: relative;
+}
+.separator__block-line:before {
+  content: "";
   position: absolute;
-  right: 0;
-  border: 1px solid #1A1718;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  padding: 20px;
+  border-top: 0.2em solid #1A1718;
+  width: 100%;
+  top: 50%;
+  z-index: -1;
+}
+.separator__block-title {
+  display: flex;
+  justify-content: end;
+  margin-left: auto;
+  background-color: #1A1718;
+  width: max-content;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
 }
 @media screen and (min-width: 768px) {
-  .is-style-personnalised-separator, .separator-1, .home-page-separator {
-    height: 65px;
-    width: 330px;
-    max-width: 330px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .is-style-personnalised-separator, .separator-1, .home-page-separator {
-    height: 85px;
-    width: 537px;
-    max-width: 537px;
-    border-top-left-radius: 25px;
+  .separator__block-title {
     border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
   }
 }
-.is-style-personnalised-separator h2, .separator-1 h2, .home-page-separator h2 {
-  font-family: "Prisma";
-  /*    font-weight: 600; */
-  font-style: normal;
-  font-size: 1rem;
-  line-height: 30px;
+.separator__block .title {
   color: #f1f5f8;
-  letter-spacing: 1px;
-}
-@media screen and (min-width: 768px) {
-  .is-style-personnalised-separator h2, .separator-1 h2, .home-page-separator h2 {
-    font-size: 1.5rem;
-  }
+  padding-left: 30px;
+  padding-right: 70px;
+  letter-spacing: 2px;
 }
 @media screen and (min-width: 1024px) {
-  .is-style-personnalised-separator h2, .separator-1 h2, .home-page-separator h2 {
-    font-size: 1.8rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .is-style-personnalised-separator h2, .separator-1 h2, .home-page-separator h2 {
-    letter-spacing: 5px;
-  }
-}
-
-.home-page-separator {
-  top: 449px;
-}
-@media screen and (min-width: 768px) {
-  .home-page-separator {
-    top: 965px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .home-page-separator {
-    top: 1144px;
-  }
-}
-
-.separator-1 {
-  top: 699px;
-}
-@media screen and (min-width: 768px) {
-  .separator-1 {
-    top: 1455px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .separator-1 {
-    top: 1705px;
+  .separator__block .title {
+    padding-right: 120px;
   }
 }
 

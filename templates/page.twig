@@ -33,7 +33,7 @@
 		{% endif %}
 
 		{% if titre %}
-			<h2 class="separator">{{titre}}</h2>
+			{% include "partial/separator.twig" %}
 		
 			{% include "block/presentation.twig" %}
 		{% endif %}
