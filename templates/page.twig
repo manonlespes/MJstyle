@@ -29,29 +29,14 @@
 	<article class="container">
 
 		{% if quote %}
-			{% include "quote.twig"%}
+			{% include "block/quote.twig"%}
 		{% endif %}
 
 		{% if titre %}
-			<div class="separator">{{titre}}</div>
-
-			<div class="container__content">
-				<div class="block block__presentation">
-					<p>{{text1}}</p>
-					<div class="wp-block-buttons">
-						<a href="{{link}}" target="_blank" rel="noopener noreferrer" class="is-style-as-link-button">{{text_link}}</a>
-					</div>
-					<p>{{text2}}</p>
-				</div>
-
-				<div>
-					<img src="{{image}}" alt="{{image_title}}">
-				</div>
-
-			</div>
-
+			<h2 class="separator">{{titre}}</h2>
+		
+			{% include "block/presentation.twig" %}
 		{% endif %}
-
 
 	</article>
 

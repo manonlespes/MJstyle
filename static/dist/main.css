@@ -457,6 +457,69 @@ header .wrapper .btn-menu-responsive {
   opacity: 0.25;
   z-index: -6;
 }
+.container__content-presentation {
+  padding: 20px;
+}
+@media screen and (min-width: 768px) {
+  .container__content-presentation {
+    padding: 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container__content-presentation {
+    padding: 70px;
+    display: flex;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .container__content-presentation {
+    padding: 110px;
+  }
+}
+
+.block__presentation-content {
+  display: flex;
+  flex-direction: column;
+}
+.block__presentation-content .wp-block-buttons {
+  align-self: center;
+}
+@media screen and (min-width: 1024px) {
+  .block__presentation-content {
+    width: 60%;
+    justify-content: center;
+  }
+  .block__presentation-content p {
+    line-height: 1.7rem;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .block__presentation-content {
+    padding: 40px;
+  }
+}
+.block__presentation-image {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+}
+@media screen and (min-width: 768px) {
+  .block__presentation-image {
+    width: 80%;
+    padding: 70px;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .block__presentation-image {
+    width: 40%;
+  }
+}
+.block__presentation-image img {
+  width: 100%;
+  border-radius: 50%;
+}
+
 html {
   font-family: "ABeeZee";
 }

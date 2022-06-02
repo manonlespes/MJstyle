@@ -1,0 +1,70 @@
+.separator{}
+
+.container{
+
+    &__content-presentation{
+        padding: $spacer *2;
+
+        @include breakpoint($medium){
+            padding: $spacer * 4;
+        }
+
+        @include breakpoint($large){
+            padding: $spacer * 7;
+            display: flex;
+        }
+
+        @include breakpoint($xlarge){
+            padding: $spacer * 11;
+        }
+    }
+
+}
+
+.block{
+
+    &__presentation-content{
+        display: flex;
+        flex-direction: column;
+
+        .wp-block-buttons{
+            align-self: center;
+        }
+
+        @include breakpoint($large){
+            width: 60%;
+            justify-content: center;
+
+            p{
+                line-height: 1.7rem;
+            }
+        }
+
+        @include breakpoint($xlarge){
+            padding: $spacer * 4;
+        }
+    }
+
+    &__presentation-image{
+        display: flex;
+        width: 100%;
+        padding: 20px;//* TODO add the image around - that is why the padding of 20px */
+
+        @include breakpoint($medium){
+            width: 80%;
+            padding: $spacer *7;
+            margin: auto;
+        }
+
+        @include breakpoint($large){
+            width: 40%;
+        }
+
+        img{
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+
+}
+
