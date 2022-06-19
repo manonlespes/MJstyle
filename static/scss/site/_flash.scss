@@ -1,0 +1,35 @@
+.m_flash {
+    display: flex;
+    flex-direction: column;
+    padding: $spacer *2;
+
+    @include breakpoint($medium){
+        padding: $spacer * 4;
+    }
+
+    @include breakpoint($large){
+        padding: $spacer * 7;
+        display: flex;
+    }
+
+    @include breakpoint($xlarge){
+        padding: $spacer * 11;
+    }
+
+    &__information {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    
+    &__content {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+    }
+}

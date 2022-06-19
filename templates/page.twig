@@ -1,20 +1,10 @@
-{% set title_block = post.custom.flash_info %}
+{% set slug = post.slug %}
 
-
+{# {% set title_block = post.custom.flash_info %}
 {% set quote = post.custom.fields.personnalised_quote %}
 {% set image_quote = post.custom.fields.quote_background.guid%}
 {% set author = post.custom.fields.author %}
-{% set image_quote_title = post.custom.fields.quote_background._wp_attachment_image_alt %}
-
-{% set titre = post.custom.fields.titre %}
-{% set text1 = post.custom.fields.text_1 %}
-{% set text2 = post.custom.fields.text_2 %}
-{% set image = post.custom.fields.pictures_presentation.guid %}
-{% set image_title = post.custom.fields.pictures_presentation._wp_attachment_image_alt %}
-{% set link = post.custom.fields.btn_link_presentation %}
-{% set text_link = post.custom.fields.call_to_action_btn_presentation %}
-
-{% set flash_info = post.custom.fields.separator_flash_info %}
+{% set image_quote_title = post.custom.fields.quote_background._wp_attachment_image_alt %} #}
 
 
 {% extends "base.twig" %}
@@ -23,27 +13,11 @@
 
 {% block content %}
 
-	
-
 	<article class="container">
 
-		{% if quote %}
-			{% include "block/quote.twig"%}
+		{% if slug == 'page-daccueil' %}
+			{% include "pages/accueil.twig" %}
 		{% endif %}
-
-		{% if flash_info %}
-			{% include "partial/separator.twig" with {titre : flash_info} %}
-
-			{% include "block/flash.twig" %}
-		
-		{% endif %}
-
-		{% if titre %}
-			{% include "partial/separator.twig" %}
-		
-			{% include "block/presentation.twig" %}
-		{% endif %}
-
 
 	</article>
 

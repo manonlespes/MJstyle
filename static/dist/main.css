@@ -178,159 +178,16 @@ header .wrapper .nav-social > .menu-social ul > li a {
   color: #C62A40;
 }
 
-.footer {
+.btn-menu-responsive {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+  padding: 10px 40px;
 }
 @media screen and (min-width: 768px) {
-  .footer {
-    padding-top: 20px;
-    /* TODO fix the issue with the footer version Ipad */
+  .btn-menu-responsive {
+    display: none;
   }
-}
-.footer__contact .blocks {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-@media screen and (min-width: 768px) {
-  .footer__contact .blocks {
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-evenly;
-  }
-}
-.footer__contact .blocks__contact-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-@media screen and (min-width: 768px) {
-  .footer__contact .blocks__contact-content {
-    width: 30%;
-  }
-}
-.footer__contact .blocks__contact-content-items {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  align-items: center;
-}
-.footer__contact .blocks__contact-content-items .information {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 25px;
-}
-.footer__contact .blocks__contact-content-items .information ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  text-align: center;
-}
-.footer__contact .blocks__contact-content-items .information ul .mail_contact {
-  color: #C62A40;
-}
-.footer__contact .blocks__contact-content-items .information a {
-  font-size: 0.9em;
-}
-@media screen and (min-width: 768px) {
-  .footer__contact .blocks__contact-content-items .information a {
-    font-size: 1em;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .footer__contact .blocks__contact-content-items .information a {
-    font-size: 1.2em;
-  }
-}
-.footer__contact .blocks__logo {
-  display: flex;
-  width: 100%;
-  margin-top: 10px;
-}
-@media screen and (min-width: 768px) {
-  .footer__contact .blocks__logo {
-    width: 30%;
-    margin-top: 0;
-  }
-}
-.footer__contact .blocks__logo a {
-  text-align: center;
-}
-.footer__contact .blocks__logo a img {
-  width: 30%;
-}
-@media screen and (min-width: 768px) {
-  .footer__contact .blocks__logo a img {
-    width: 70%;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .footer__contact .blocks__logo a img {
-    width: 40%;
-  }
-}
-@media screen and (min-width: 768px) {
-  .footer__contact .blocks__nav {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-.footer__contact .blocks__nav ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-.footer__contact .blocks__nav ul li::before {
-  content: "♦ ";
-  color: #C62A40;
-}
-@media screen and (min-width: 768px) {
-  .footer__contact .blocks__nav ul {
-    line-height: 20px;
-  }
-  .footer__contact .blocks__nav ul a {
-    font-size: 1em;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .footer__contact .blocks__nav ul {
-    line-height: 25px;
-  }
-  .footer__contact .blocks__nav ul a {
-    font-size: 1.2em;
-  }
-}
-.footer__copyright {
-  margin-top: 20px;
-  background-color: #1A1718;
-  color: #f1f5f8;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.footer__copyright + p {
-  margin-bottom: 0;
-}
-.footer__copyright-links {
-  display: flex;
-  width: 90%;
-  justify-content: space-evenly;
-}
-.footer__copyright a {
-  color: #C62A40;
-}
-.footer__copyright a:hover {
-  color: #856f76;
-}
-.footer__copyright .mention_design {
-  font-size: 0.8em;
 }
 
 .container__quote {
@@ -493,16 +350,195 @@ header .wrapper .nav-social > .menu-social ul > li a {
   border-radius: 50%;
 }
 
-.btn-menu-responsive {
+.m_flash {
   display: flex;
-  justify-content: flex-end;
-  cursor: pointer;
-  padding: 10px 40px;
+  flex-direction: column;
+  padding: 20px;
 }
 @media screen and (min-width: 768px) {
-  .btn-menu-responsive {
-    display: none;
+  .m_flash {
+    padding: 40px;
   }
+}
+@media screen and (min-width: 1024px) {
+  .m_flash {
+    padding: 70px;
+    display: flex;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .m_flash {
+    padding: 110px;
+  }
+}
+.m_flash__information {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.m_flash__content {
+  text-align: center;
+}
+.m_flash h2 {
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    padding-top: 20px;
+    /* TODO fix the issue with the footer version Ipad */
+  }
+}
+.footer__contact .blocks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .footer__contact .blocks {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
+.footer__contact .blocks__contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .footer__contact .blocks__contact-content {
+    width: 30%;
+  }
+}
+.footer__contact .blocks__contact-content-items {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
+}
+.footer__contact .blocks__contact-content-items .information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 25px;
+}
+.footer__contact .blocks__contact-content-items .information ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+.footer__contact .blocks__contact-content-items .information ul .mail_contact {
+  color: #C62A40;
+}
+.footer__contact .blocks__contact-content-items .information a {
+  font-size: 0.9em;
+}
+@media screen and (min-width: 768px) {
+  .footer__contact .blocks__contact-content-items .information a {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer__contact .blocks__contact-content-items .information a {
+    font-size: 1.2em;
+  }
+}
+.footer__contact .blocks__logo {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+}
+@media screen and (min-width: 768px) {
+  .footer__contact .blocks__logo {
+    width: 30%;
+    margin-top: 0;
+  }
+}
+.footer__contact .blocks__logo a {
+  text-align: center;
+}
+.footer__contact .blocks__logo a img {
+  width: 30%;
+}
+@media screen and (min-width: 768px) {
+  .footer__contact .blocks__logo a img {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer__contact .blocks__logo a img {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__contact .blocks__nav {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.footer__contact .blocks__nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.footer__contact .blocks__nav ul li::before {
+  content: "♦ ";
+  color: #C62A40;
+}
+@media screen and (min-width: 768px) {
+  .footer__contact .blocks__nav ul {
+    line-height: 20px;
+  }
+  .footer__contact .blocks__nav ul a {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer__contact .blocks__nav ul {
+    line-height: 25px;
+  }
+  .footer__contact .blocks__nav ul a {
+    font-size: 1.2em;
+  }
+}
+.footer__copyright {
+  margin-top: 20px;
+  background-color: #1A1718;
+  color: #f1f5f8;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.footer__copyright + p {
+  margin-bottom: 0;
+}
+.footer__copyright-links {
+  display: flex;
+  width: 90%;
+  justify-content: space-evenly;
+}
+.footer__copyright a {
+  color: #C62A40;
+}
+.footer__copyright a:hover {
+  color: #856f76;
+}
+.footer__copyright .mention_design {
+  font-size: 0.8em;
 }
 
 html {
@@ -575,6 +611,15 @@ h3 {
   h3 {
     font-size: 1.7rem;
   }
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+button:hover {
+  background-color: none;
+  box-shadow: none;
 }
 
 * + .wp-block-buttons {

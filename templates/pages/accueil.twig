@@ -1,0 +1,42 @@
+{% set title_block = post.custom.flash_info %}
+{% set quote = post.custom.fields.personnalised_quote %}
+{% set image_quote = post.custom.fields.quote_background.guid%}
+{% set author = post.custom.fields.author %}
+{% set image_quote_title = post.custom.fields.quote_background._wp_attachment_image_alt %}
+{% set flash_info = post.custom.fields.separator_flash_info %}
+
+{% set titre = post.custom.fields.titre %}
+{% set text1 = post.custom.fields.text_1 %}
+{% set text2 = post.custom.fields.text_2 %}
+{% set image = post.custom.fields.pictures_presentation.guid %}
+{% set image_title = post.custom.fields.pictures_presentation._wp_attachment_image_alt %}
+{% set link = post.custom.fields.btn_link_presentation %}
+{% set text_link = post.custom.fields.call_to_action_btn_presentation %}
+
+{% set information_1 = post.custom.field.information_1 %}
+{% set content_1 = post.custom.field.sous_info_1 %}
+{% set link_1 = post.custom.field.btn_link %}
+{% set call_to_action_1 = post.custom.field.call_to_action_btn %}
+
+{% set information_2 = post.custom.field.information_2 %}
+{% set content_2 = post.custom.field.sous_info_2 %}
+{% set link_2 = post.custom.field.btn_link_2 %}
+{% set call_to_action_2 = post.custom.field.call_to_action_btn_2 %}
+
+
+{% if quote %}
+	{% include "block/quote.twig"%}
+{% endif %}
+
+{% if flash_info %}
+	{% include "partial/separator.twig" with {titre : flash_info} %}
+
+	{% include "block/flash.twig" %}
+
+{% endif %}
+
+{% if titre %}
+	{% include "partial/separator.twig" %}
+
+	{% include "block/presentation.twig" %}
+{% endif %}

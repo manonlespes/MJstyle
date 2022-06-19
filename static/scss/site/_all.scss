@@ -1,6 +1,10 @@
-@import 'site-header';
-@import 'site-footer';
+@import 'header/site-header';
+@import 'header/menu-responsive';
+
 @import 'wp-blocks';
-@import 'block-quote';
-@import 'block-presentation';
-@import 'menu-responsive';
+@import 'quote';
+@import 'presentation';
+@import 'flash';
+
+@import 'footer/site-footer';
+

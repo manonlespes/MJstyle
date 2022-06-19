@@ -1,4 +1,49 @@
-<pre>
-		{{ dump(post) }}
-	</pre>
-{# TODO penser à mettre des confitions pour si info ou pas en fonction des blocks acf et obligation #}
+{% set information_1 = post.custom.fields.information_1 %}
+{% set content_1 = post.custom.fields.sous_info_1 %}
+{% set link_1 = post.custom.fields.btn_link %}
+{% set call_to_action_1 = post.custom.fields.call_to_action_btn %}
+
+{% set information_2 = post.custom.fields.information_2 %}
+{% set content_2 = post.custom.fields.sous_info_2 %}
+{% set link_2 = post.custom.fields.btn_link_2 %}
+{% set call_to_action_2 = post.custom.fields.call_to_action_btn_2 %}
+
+{# <pre>
+	{{ dump(post) }}
+</pre> #}
+
+<section class="m_flash">
+	<div class="m_flash__information">
+
+		<h2 class="h2">{{information_1}}</h2>
+
+		<p class="m_flash__content">{{content_1}}</p>
+
+		{% if link_1 or call_to_action_1 %}
+
+			<button class="wp-block-buttons">
+				<a href="{{link_1}}" target="_blank" rel="noopener noreferrer" class="is-style-as-link-button">{{call_to_action_1}}</a>
+			</button>
+
+		{% endif %}
+	</div>
+
+	{% if information_2 %}
+		<div class="m_flash__information">
+
+			<h2 class="h2">{{information_2}}</h2>
+			
+			{% if content_2 %}
+				<p class="m_flash__content">{{content_2}}</p>
+			{% endif %}
+
+			{% if link_2 or call_to_action_2 %}
+
+				<button class="wp-block-buttons">
+					<a href="{{link_2}}" target="_blank" rel="noopener noreferrer" class="is-style-as-link-button">{{call_to_action_2}}</a>
+				</button>
+
+			{% endif %}
+		{% endif %}
+	</div>
+</section>
