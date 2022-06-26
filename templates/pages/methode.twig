@@ -1,0 +1,36 @@
+{# <pre>
+    {{ dump(post.custom.fields) }}
+</pre> #}
+{% set presentation1 = post.custom.fields.presentation_1 %}
+{% set titre1 = post.custom.fields.titre_bloc %}
+
+{% set titre2 = post.custom.fields.titre_bloc_2 %}
+{% set presentation2 = post.custom.fields.presentation_2 %}
+
+{% set presentation3 = post.custom.fields.presentation_3 %}
+
+{% set titre_interpeller = post.custom.fields.titre_interpeller %}
+
+{% set accroche = post.custom.fields.phrase_accroche %}
+
+{% set btn = post.custom.fields.call_to_action_btn %}
+{% set btn_url = post.custom.fields.bouton_1.url %}
+{% set btn_target = post.custom.fields.bouton_1.target %}
+
+{% set image_title = post.custom.fields.image_methode._wp_attachment_image_alt %}
+{% set image = post.custom.fields.image_methode.guid %}
+
+
+<section>
+
+	{% include "block/presentation.twig" with {text1: presentation1, text2: presentation2, image: image, image_title: image_title} only %}
+
+</section>
+
+
+{% if titre1 %}
+	{% include "partial/separator.twig" with {titre : titre1} only %}
+
+	{% include "block/flash.twig" %}
+
+{% endif %}
