@@ -2,10 +2,16 @@
 
 	<div class="block block__presentation-content">
 		<p>{{text1}}</p>
-		<button class="wp-block-buttons">
-			<a href="{{link}}" target="_blank" rel="noopener noreferrer" class="is-style-as-link-button">{{text_link}}</a>
-		</button>
-		<p>{{text2}}</p>
+
+		{% if link %}
+			<button class="wp-block-buttons">
+				<a href="{{link}}" target="_blank" rel="noopener noreferrer" class="is-style-as-link-button">{{text_link}}</a>
+			</button>
+		{% endif %}
+
+		{% if text2 %}
+			<p>{{text2}}</p>
+		{% endif %}
 	</div>
 
 	<div class="block__presentation-image">
