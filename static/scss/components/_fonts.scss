@@ -1,5 +1,59 @@
-
-
-html{
+html {
     font-family: $fontText;
+}
+
+%p {
+    line-height: 1.7rem;
+    font-family: $fontText;
+}
+
+p {
+    @extend %p;
+}
+
+p {
+    > a {
+        @include transition();
+        color: $red;
+
+        &:after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            background-color: $red;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+li + a {
+    text-decoration: none;
+    color: $black;
+    @include transition();
+
+    &:link {
+        color: $black;
+    }
+
+    /* visited link */
+    &:visited {
+        color: $black;
+    }
+
+    /* mouse over link */
+    &:hover {
+        color: $red;
+    }
+
+    /* selected link */
+    &:active {
+        color: $grey;
+    }
+
+    /* selected link */
+    &:focus {
+        color: $grey;
+    }
 }

@@ -12,12 +12,12 @@
 	{{ dump(post) }}
 </pre> #}
 
-<section class="m_flash">
-	<div class="m_flash__information">
+<section class="m_section m_section__flash">
+	<div class="m_section__flash-information">
 
 		<h2 class="h2">{{information_1}}</h2>
 
-		<p class="m_flash__content">{{content_1}}</p>
+		<p class="m_section__flash-content">{{content_1}}</p>
 
 		{% if link_1 or call_to_action_1 %}
 
@@ -29,12 +29,12 @@
 	</div>
 
 	{% if information_2 %}
-		<div class="m_flash__information">
+		<div class="m_section__flash-information">
 
 			<h2 class="h2">{{information_2}}</h2>
 			
 			{% if content_2 %}
-				<p class="m_flash__content">{{content_2}}</p>
+				<p class="m_section__flash-content">{{content_2}}</p>
 			{% endif %}
 
 			{% if link_2 or call_to_action_2 %}

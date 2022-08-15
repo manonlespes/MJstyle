@@ -8,7 +8,25 @@ body {
     padding: 0;
 }
 
-a{
+/* a{
     @include links;
-}
+}  */
 
+.m_section{
+
+    display: flex;
+    padding: $spacer * 2;
+
+    @include breakpoint($medium){
+        padding: $spacer * 4;
+    }
+
+    @include breakpoint($large){
+        padding: $spacer * 7;
+    }
+
+    @include breakpoint($xlarge){
+        padding: $spacer * 11;
+    }
+
+}

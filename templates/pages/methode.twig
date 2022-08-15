@@ -1,6 +1,10 @@
 {# <pre>
     {{ dump(post.custom.fields) }}
 </pre> #}
+
+{# <pre>
+	{{ dump(post)}}
+</pre> #}
 {% set presentation1 = post.custom.fields.presentation_1 %}
 {% set titre1 = post.custom.fields.titre_bloc %}
 
@@ -20,17 +24,41 @@
 {% set image_title = post.custom.fields.image_methode._wp_attachment_image_alt %}
 {% set image = post.custom.fields.image_methode.guid %}
 
+{% set call_to_action = post.custom.fields.call_to_action %}
+{% set btn_lieu = post.custom.fields.btn_lieu %}
 
-<section>
+
+{% if presentation1 and presentation2 %}
 
 	{% include "block/presentation.twig" with {text1: presentation1, text2: presentation2, image: image, image_title: image_title} only %}
 
-</section>
+{% endif %}
 
 
 {% if titre1 %}
 	{% include "partial/separator.twig" with {titre : titre1} only %}
 
-	{% include "block/flash.twig" %}
-
 {% endif %}
+
+<section class="m_section">
+
+	<div class="m_section__wrapper">
+
+		<div class="m_content">
+			{{post.content}}
+		</div>
+
+		{% if call_to_action%}
+
+			<button class="wp-block-buttons">
+				<a href="{{call_to_action}}" target="_blank" rel="noopener noreferrer" class="is-style-as-link-button">{{btn_lieu}}</a>
+			</button>
+
+		
+
+		{% endif %}
+
+	</div>
+
+
+</section>
